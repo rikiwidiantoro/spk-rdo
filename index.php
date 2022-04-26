@@ -24,6 +24,9 @@
         .kriteria .tambah-kriteria {
             margin-top: 20px;
         }
+        .kriteria table thead th {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -34,7 +37,7 @@
             <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php">dasboard</a></li>
-                <li><a href="">hasil perangkingan</a></li>
+                <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
                 <li><a href="">Logout</a></li>
             </ul>
         </div>
@@ -43,7 +46,7 @@
 
 
     <!-- tabel kriteria -->
-    <br><br>
+    <br>
     <div id="kriteria" class="kriteria">
         <div class="container">
             <div class="row">
@@ -51,7 +54,7 @@
                     <h5>Tabel Kriteria</h5>
                 </div>
                 <div class="col m3">
-                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
+                    <a class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
                 </div>
             </div>
             <div class="row">
@@ -71,11 +74,11 @@
                                 foreach($kriterias as $kriteria) {
                                     echo "
                                     <tr>
-                                        <td>". $kriteria['no_kriteria'] ."</td>
+                                        <td class='center'>". $kriteria['no_kriteria'] ."</td>
                                         <td>". $kriteria['nama_kriteria'] ."</td>
-                                        <td>". $kriteria['cost_benefit'] ."</td>
-                                        <td>". $kriteria['bobot_kriteria']."</td>
-                                        <td>
+                                        <td class='center'>". $kriteria['cost_benefit'] ."</td>
+                                        <td class='center'>". $kriteria['bobot_kriteria']."</td>
+                                        <td class='center'>
                                             <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
                                             <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
