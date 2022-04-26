@@ -1,6 +1,7 @@
 <!-- koneksi -->
 <?php
     include_once('koneksi.php');
+    $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
 
 ?>
 
@@ -54,6 +55,110 @@
         </div>
     </div>
     <!-- tombol lihat hasil -->
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Alternatif</th>
+                    <th>Manajer Investasi</th>
+                    <th>Manajer Investasi</th>
+                    <th>Total AUM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($alternatifs as $alternatif) {
+                        // kriteria1
+                        if( $alternatif['kriteria1'] == "Sucor Asset Management" || $alternatif['kriteria1'] == "Trimegah Asset Management" ) {
+                            $kriteria1 = 5;
+                        } else if( $alternatif['kriteria1'] == "Asset Management Sinarmas" || $alternatif['kriteria1'] == "Eastpring Investments" ) {
+                            $kriteria1 = 4;
+                        } else {
+                            $kriteria1 = 3;
+                        }
+
+                        // kriteria2
+                        if( $alternatif['kriteria2'] > 1 ) {
+                            $kriteria2 = 5;
+                        } else if( $alternatif['kriteria2'] <= 1 ) {
+                            $kriteria2 = 4;
+                        } else {
+                            $kriteria2 = 3;
+                        }
+                        echo "
+                            <tr>
+                                <td>". $alternatif['no_alternatif'] ."</td>
+                                <td>". $alternatif['kriteria1'] ."</td>
+                                <td>". $kriteriaA1 = $kriteria1 ."</td>
+                                <td>". $kriteria2 ."</td>
+                            </tr>
+                        ";
+                        echo "<br>";
+                    }
+                ?>
+            </tbody>
+        </table>
+        <?php
+            foreach($alternatifs as $alternatif) {
+                // echo $alternatif['no_alternatif'];
+                // echo " = ";
+                // echo $alternatif['kriteria1'];
+                // echo " = ";
+
+
+                // kriteria1
+                if( $alternatif['kriteria1'] == "Sucor Asset Management" || $alternatif['kriteria1'] == "Trimegah Asset Management" ) {
+                    $kriteria1 = 5;
+                } else if( $alternatif['kriteria1'] == "Asset Management Sinarmas" || $alternatif['kriteria1'] == "Eastpring Investments" ) {
+                    $kriteria1 = 4;
+                } else {
+                    $kriteria1 = 3;
+                }
+
+                // kriteria2
+                // if( $alternatif['kriteria1'] == "Sucor Asset Management" || $alternatif['kriteria1'] == "Trimegah Asset Management" ) {
+                //     $kriteria1 = 5;
+                // } else if( $alternatif['kriteria1'] == "Asset Management Sinarmas" || $alternatif['kriteria1'] == "Eastpring Investments" ) {
+                //     $kriteria1 = 4;
+                // } else {
+                //     $kriteria1 = 3;
+                // }
+                
+
+                // echo "[" . $kriteriaA1 = $kriteria1 . "]";
+                // echo " = ";
+                // echo $alternatif['kriteria2'];
+
+                // echo "<br>";
+                
+                // tabel
+                // echo "
+                //     <table>
+                //         <thead>
+                //             <tr>
+                //                 <th>Alternatif</th>
+                //                 <th>Manajer Investasi</th>
+                //                 <th>Manajer Investasi</th>
+                //                 <th>Total AUM</th>
+                //             </tr>
+                //         </thead>
+                //         <tbody>
+                //             <tr>
+                //                 <td>". $alternatif['no_alternatif'] ."</td>
+                //                 <td>". $alternatif['kriteria1'] ."</td>
+                //                 <td>". $kriteriaA1 = $kriteria1 ."</td>
+                //                 <td>". $alternatif['kriteria2'] ."</td>
+                //             </tr>
+                //         </tbody>
+                //     </table>
+                // ";
+            }
+
+            
+            
+        ?>
+    </div>
 
 
 

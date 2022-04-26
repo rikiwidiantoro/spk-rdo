@@ -35,6 +35,13 @@
         .kriteria table tbody a, .alternatif table tbody a, .kriteria .tambah-kriteria, .alternatif .tambah-alternatif {
             font-size: 11px;
         }
+        .con {
+            padding: 4%;
+        }
+        footer {
+            height: 70px;
+            line-height: 70px;
+        }
     </style>
 </head>
 
@@ -108,7 +115,7 @@
     <br>
     <!-- tabel alternatif -->
     <div id="alternatif" class="alternatif">
-        <div class="container">
+        <div class="con">
             <div class="row">
                 <div class="col m9">
                     <h5>Tabel Alternatif</h5>
@@ -124,14 +131,15 @@
                             <tr>
                                 <th>Alternatif</th>
                                 <th>Nama Produk</th>
-                                <th>Manajer Investasi</th>
-                                <th>Total AUM</th>
-                                <th>CAGR 1 Tahun</th>
-                                <th>Dropdown 1 Tahun</th>
-                                <th>Expense Ratio</th>
-                                <th>Minimal Pembelian</th>
-                                <th>Lama Peluncuran</th>
-                                <th style="width: 20%">Aksi</th>
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <?php
+                                    foreach($kriterias as $kriteria) {
+                                        echo "
+                                            <th>". $kriteria['nama_kriteria'] ."</th>
+                                        ";
+                                    }
+                                ?>
+                                <th style="width: 15%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,7 +150,7 @@
                                         <td class='center'>". $alternatif['no_alternatif'] ."</td>
                                         <td>". $alternatif['nama_produk'] ."</td>
                                         <td>". $alternatif['kriteria1'] ."</td>
-                                        <td class='center'>". $alternatif['kriteria2']."</td>
+                                        <td class='center'>". $alternatif['kriteria2']." T</td>
                                         <td class='center'>". $alternatif['kriteria3']."</td>
                                         <td class='center'>". $alternatif['kriteria4']."</td>
                                         <td class='center'>". $alternatif['kriteria5']."</td>
@@ -165,6 +173,12 @@
     </div>
     <!-- tabel alternatif -->
 
+
+    <!-- footer -->
+    <footer class="grey darken-2 white-text center">
+        <p>&copy; Riki Widiantoro</p>
+    </footer>
+    <!-- footer -->
 
 
     <!--JavaScript at end of body for optimized loading-->
