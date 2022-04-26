@@ -3,6 +3,8 @@
     include_once('koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
+    $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
+
 
 ?>
 
@@ -24,8 +26,14 @@
         .kriteria .tambah-kriteria {
             margin-top: 20px;
         }
-        .kriteria table thead th {
+        .alternatif .tambah-alternatif {
+            margin-top: 20px;
+        }
+        .kriteria table thead th, .alternatif table th {
             text-align: center;
+        }
+        .kriteria table tbody a, .alternatif table tbody a, .kriteria .tambah-kriteria, .alternatif .tambah-alternatif {
+            font-size: 11px;
         }
     </style>
 </head>
@@ -58,8 +66,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col m12 s12">
-                    <table class="responsive-table" style="width:100%">
+                <div class="col m12">
+                    <table>
                         <thead>
                             <tr>
                                 <th>Kriteria</th>
@@ -93,9 +101,69 @@
             </div>
         </div>
     </div>
-    
+    <br>
     <!-- tabel kriteria -->
 
+    <hr>
+    <br>
+    <!-- tabel alternatif -->
+    <div id="alternatif" class="alternatif">
+        <div class="container">
+            <div class="row">
+                <div class="col m9">
+                    <h5>Tabel Alternatif</h5>
+                </div>
+                <div class="col m3">
+                    <a class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alternatif</th>
+                                <th>Nama Produk</th>
+                                <th>Manajer Investasi</th>
+                                <th>Total AUM</th>
+                                <th>CAGR 1 Tahun</th>
+                                <th>Dropdown 1 Tahun</th>
+                                <th>Expense Ratio</th>
+                                <th>Minimal Pembelian</th>
+                                <th>Lama Peluncuran</th>
+                                <th style="width: 20%">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($alternatifs as $alternatif) {
+                                    echo "
+                                    <tr>
+                                        <td class='center'>". $alternatif['no_alternatif'] ."</td>
+                                        <td>". $alternatif['nama_produk'] ."</td>
+                                        <td>". $alternatif['kriteria1'] ."</td>
+                                        <td class='center'>". $alternatif['kriteria2']."</td>
+                                        <td class='center'>". $alternatif['kriteria3']."</td>
+                                        <td class='center'>". $alternatif['kriteria4']."</td>
+                                        <td class='center'>". $alternatif['kriteria5']."</td>
+                                        <td class='center'>". $alternatif['kriteria6']."</td>
+                                        <td class='center'>". $alternatif['kriteria7']."</td>
+                                        <td class='center'>
+                                            <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
+                                            <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
+                                        </td>
+                                    </tr>
+                                    
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tabel alternatif -->
 
 
 
