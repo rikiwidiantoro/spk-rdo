@@ -151,9 +151,9 @@
                                         <td>". $alternatif['nama_produk'] ."</td>
                                         <td>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
-                                        <td class='center'>". $alternatif['kriteria3']."</td>
-                                        <td class='center'>". $alternatif['kriteria4']."</td>
-                                        <td class='center'>". $alternatif['kriteria5']."</td>
+                                        <td class='center'>+". $alternatif['kriteria3']."%</td>
+                                        <td class='center'>-". $alternatif['kriteria4']."%</td>
+                                        <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td class='center'>". $alternatif['kriteria6']."</td>
                                         <td class='center'>". $alternatif['kriteria7']."</td>
                                         <td class='center'>
