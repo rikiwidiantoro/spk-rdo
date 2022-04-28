@@ -142,6 +142,19 @@
                             $kriteria6 = 5;
                         }
 
+                        // kriteria7 = lama peluncuran
+                        if( $alternatif['kriteria7'] > 120 ) {
+                            $kriteria7 = 5;
+                        } else if( $alternatif['kriteria7'] >= 91 && $alternatif['kriteria7'] <= 120 ) {
+                            $kriteria7 = 4;
+                        } else if( $alternatif['kriteria7'] >= 61 && $alternatif['kriteria7'] <= 96 ) {
+                            $kriteria7 = 3;
+                        } else if( $alternatif['kriteria7'] >= 24 && $alternatif['kriteria7'] <= 60 ) {
+                            $kriteria7 = 2;
+                        } else if( $alternatif['kriteria7'] < 24 ) {
+                            $kriteria7 = 1;
+                        }
+
 
                         echo "
                             <tr>
@@ -153,6 +166,7 @@
                                 <td>". $kriteria4 ."</td>
                                 <td>". $kriteria5 ."</td>
                                 <td>". $kriteria6 ."</td>
+                                <td>". $kriteria7 ."</td>
                             </tr>
                         ";
                         echo "<br>";

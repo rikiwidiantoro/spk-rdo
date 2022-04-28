@@ -155,7 +155,7 @@
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td class='center'>". $alternatif['kriteria6']."</td>
-                                        <td class='center'>". $alternatif['kriteria7']."</td>
+                                        <td class='center'>". $alternatif['kriteria7']." Bulan</td>
                                         <td class='center'>
                                             <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
                                             <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
