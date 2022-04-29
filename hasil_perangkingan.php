@@ -181,7 +181,30 @@
                                             <td>". $x7 ."</td>
                                         </tr>
                                     ";
+
+                                    // $arr1 = [$x1];
+                                    // var_dump($arr1);
+                                    // var_dump($x1);
+                                    // global $arr1;
+                                    // global $arr1;
+                                    // return $x1;
+                                    // global $x2;
+                                    // global $x3;
+                                    // global $x4;
+                                    // global $x5;
+                                    // global $x6;
+                                    // global $x7;
+                                    // $rij1 = $x1 / max($x1);
+                                    // echo "$x1";
+                                    // echo "<br>";
+                                    // var_dump(min($x1));
+                                    echo $x1;
                                 }
+                                // $array = [$x1];
+                                echo "<br>";
+                                echo $x1;
+                                // var_dump($x1);
+                                
                             ?>
                         </tbody>
                     </table>
@@ -191,6 +214,14 @@
     </div>
     <!-- matriks X -->
 
+    <?php
+        // echo "<h1>". $arr1[0] ."</h1>";
+        // var_dump($arr1);
+        // var_dump($x1);
+        // foreach($arr1 as $arr) {
+        //     var_dump($arr);
+        // }
+    ?>
     <!-- rij -->
     <br>
     <div class="rij">
@@ -222,6 +253,8 @@
                                     echo "
                                         <tr>
                                             <td><b>". $alternatif['no_alternatif'] ."</b></td>
+                                            <td>". $x1 / 5 ."</td>
+                                            <td>". $x2 / 5 ."</td>
                                         </tr>
                                     ";
                                 }
