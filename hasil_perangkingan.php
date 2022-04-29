@@ -1,6 +1,8 @@
 <!-- koneksi -->
 <?php
     include_once('koneksi.php');
+
+    $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
 
 ?>
@@ -69,13 +71,14 @@
                             <tr>
                                 <th>Alternatif</th>
                                 <th>Manajer Investasi</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>C5</th>
-                                <th>C6</th>
-                                <th>C7</th>
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <?php
+                                    foreach($kriterias as $kriteria) {
+                                        echo "
+                                            <th>". $kriteria['no_kriteria'] ."</th>
+                                        ";
+                                    }
+                                ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -186,6 +189,41 @@
     </div>
     <!-- matriks X -->
 
+    <!-- rij -->
+    <div class="rij">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <h5>Tabel R</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <?php
+                                    foreach($kriterias as $kriteria) {
+                                        echo "
+                                            <th>". $kriteria['no_kriteria'] ."</th>
+                                        ";
+                                    }
+                                ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rij -->
 
     <!-- tombol lihat hasil -->
     <br><br>
