@@ -31,16 +31,18 @@
 
 <body>
     <!-- navbar -->
-    <nav class="grey darken-2">
-        <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.php">dasboard</a></li>
-                <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
-                <li><a href="">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav class="grey darken-2">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.php">dasboard</a></li>
+                    <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <!-- navbar -->
 
     <!-- tombol lihat hasil -->
@@ -190,6 +192,7 @@
     <!-- matriks X -->
 
     <!-- rij -->
+    <br>
     <div class="rij">
         <div class="container">
             <div class="row">
@@ -215,7 +218,13 @@
                         </thead>
                         <tbody>
                             <?php
-                                
+                                foreach($alternatifs as $alternatif) {
+                                    echo "
+                                        <tr>
+                                            <td><b>". $alternatif['no_alternatif'] ."</b></td>
+                                        </tr>
+                                    ";
+                                }
                             ?>
                         </tbody>
                     </table>
