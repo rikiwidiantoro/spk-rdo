@@ -198,11 +198,11 @@
                                     // echo "$x1";
                                     // echo "<br>";
                                     // var_dump(min($x1));
-                                    echo $x1;
+                                    // echo $x1;
                                 }
                                 // $array = [$x1];
-                                echo "<br>";
-                                echo $x1;
+                                // echo "<br>";
+                                // echo $x1;
                                 // var_dump($x1);
                                 
                             ?>
