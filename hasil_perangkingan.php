@@ -182,29 +182,22 @@
                                         </tr>
                                     ";
 
-                                    // $arr1 = [$x1];
-                                    // var_dump($arr1);
-                                    // var_dump($x1);
-                                    // global $arr1;
-                                    // global $arr1;
-                                    // return $x1;
-                                    // global $x2;
-                                    // global $x3;
-                                    // global $x4;
-                                    // global $x5;
-                                    // global $x6;
-                                    // global $x7;
-                                    // $rij1 = $x1 / max($x1);
-                                    // echo "$x1";
-                                    // echo "<br>";
-                                    // var_dump(min($x1));
-                                    // echo $x1;
+                                    // solusi : perhitungan disini atau menambahkan data ke database
+
+                                    // $arr1 = [$x1,2];
+                                    // echo $arr1[0];
+                                    
+
+                                    // coba perhitungan disini
+                                    echo $r1 = $x1 / max(1,2,3,4,5);
+                                    // $arr1 = $x1;
+                                    
+                                    echo "<br>";
+                                    // echo max($x1);
+                                    
                                 }
-                                // $array = [$x1];
-                                // echo "<br>";
-                                // echo $x1;
-                                // var_dump($x1);
                                 
+                                // echo $arr1[0];
                             ?>
                         </tbody>
                     </table>
@@ -215,12 +208,9 @@
     <!-- matriks X -->
 
     <?php
-        // echo "<h1>". $arr1[0] ."</h1>";
-        // var_dump($arr1);
-        // var_dump($x1);
-        // foreach($arr1 as $arr) {
-        //     var_dump($arr);
-        // }
+        
+        var_dump($x1);
+        
     ?>
     <!-- rij -->
     <br>
