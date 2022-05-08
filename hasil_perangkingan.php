@@ -4,6 +4,18 @@
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
+    $converts = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+    $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+    $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+
+    // $bobot = mysqli_query($koneksi, "SELECT bobot_kriteria FROM kriteria");
+    // $bb = mysqli_fetch_array($bobot);
+    $bobot = [20,20,15,10,10,10,15];
+
+    $nMax = mysqli_query($koneksi, "SELECT max(kriteria1) as maxK1, max(kriteria2) as maxK2, max(kriteria3) as maxK3, max(kriteria7) as maxK7 FROM convert_alternatif");
+    $nMin = mysqli_query($koneksi, "SELECT min(kriteria4) as minK4, min(kriteria5) as minK5, min(kriteria6) as minK6 FROM convert_alternatif");
+    $max = mysqli_fetch_array($nMax);
+    $min = mysqli_fetch_array($nMin);
 
 ?>
 
@@ -189,10 +201,10 @@
                                     
 
                                     // coba perhitungan disini
-                                    echo $r1 = $x1 / max(1,2,3,4,5);
-                                    // $arr1 = $x1;
+                                    // echo $r1 = $x1 / max(1,2,3,4,5);
+                                    // // $arr1 = $x1;
                                     
-                                    echo "<br>";
+                                    // echo "<br>";
                                     // echo max($x1);
                                     
                                 }
@@ -206,12 +218,157 @@
         </div>
     </div>
     <!-- matriks X -->
+    <!-- matriks X -->
+    <div class="matriksX">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <h5>Tabel Matriks X pakai while</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <!-- <th>Alternatif</th>
+                                <th>Manajer Investasi</th> -->
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <?php
+                                    foreach($kriterias as $kriteria) {
+                                        echo "
+                                            <th>". $kriteria['no_kriteria'] ."</th>
+                                        ";
+                                    }
+                                ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($data = mysqli_fetch_array($converts)) {
 
-    <?php
-        
-        var_dump($x1);
-        
-    ?>
+                                    echo "
+                                        <tr>
+                                            <td>".$data['kriteria1']."</td>
+                                            <td>".$data['kriteria2']."</td>
+                                            <td>".$data['kriteria3']."</td>
+                                            <td>".$data['kriteria4']."</td>
+                                            <td>".$data['kriteria5']."</td>
+                                            <td>".$data['kriteria6']."</td>
+                                            <td>".$data['kriteria7']."</td>
+                                            
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- matriks X -->
+
+    <!-- rij -->
+    <br>
+    <div class="rij">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <h5>Tabel R pakai while</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <!-- <th></th> -->
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <?php
+                                    foreach($kriterias as $kriteria) {
+                                        echo "
+                                            <th>". $kriteria['no_kriteria'] ."</th>
+                                        ";
+                                    }
+                                ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($data2 = mysqli_fetch_array($convertss)) {
+
+                                    echo "
+                                        <tr>
+                                            <td>".round($data2['kriteria1'] / $max['maxK1'],2)."</td>
+                                            <td>".round($data2['kriteria2'] / $max['maxK2'],2)."</td>
+                                            <td>".round($data2['kriteria3'] / $max['maxK3'],2)."</td>
+                                            <td>".round($min['minK4'] / $data2['kriteria4'],2)."</td>
+                                            <td>".round($min['minK5'] / $data2['kriteria5'],2)."</td>
+                                            <td>".round($min['minK6'] / $data2['kriteria6'],2)."</td>
+                                            <td>".round($data2['kriteria7'] / $max['maxK7'],2)."</td>
+                                            
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rij -->
+    <!-- rij -->
+    <br>
+    <div class="rij">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <h5>Tabel V pakai while</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <!-- <th></th> -->
+                                <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                <th>Nilai Preferensi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($data3 = mysqli_fetch_array($convertsss)) {
+
+                                    $point = round(
+                                        (($data3['kriteria1'] / $max['maxK1']) * $bobot[0]) +
+                                        (($data3['kriteria2'] / $max['maxK2']) * $bobot[1]) +
+                                        (($data3['kriteria3'] / $max['maxK3']) * $bobot[2]) +
+                                        (($min['minK4'] / $data3['kriteria4']) * $bobot[3]) +
+                                        (($min['minK5'] / $data3['kriteria5']) * $bobot[4]) +
+                                        (($min['minK6'] / $data3['kriteria6']) * $bobot[5]) +
+                                        (($data3['kriteria7'] / $max['maxK7']) * $bobot[6])
+                                    ,2);
+
+                                    echo "
+                                        <tr>
+                                            <td>".$point."</td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rij -->
+    
+    
+    
     <!-- rij -->
     <br>
     <div class="rij">
