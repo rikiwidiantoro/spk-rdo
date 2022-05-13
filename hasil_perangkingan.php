@@ -523,6 +523,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            // display none = awalan kosong lali di klik menampilkan hasil perhitungan
+            $('.tabel-perhitungan .matriksX').css('display', 'none');
+            $('.tabel-perhitungan .rij').css('display', 'none');
+            $('.tabel-perhitungan .nilaiPreferensi').css('display', 'none');
+
             $('.lihat-saw').click(function() {
                 $('.tabel-perhitungan .matriksX').fadeToggle(1000);
                 $('.tabel-perhitungan .rij').fadeToggle(2000);
