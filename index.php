@@ -20,6 +20,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SPK RDO</title>
 
     <!-- css sendiri -->
     <style>
@@ -72,7 +73,7 @@
                     <h5>Tabel Kriteria</h5>
                 </div>
                 <div class="col m3">
-                    <a class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
+                    <a href="crud/tambahKriteria.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
                 </div>
             </div>
             <div class="row">
