@@ -66,7 +66,7 @@
         <div class="container">
             <div class="row">
                 <div class="col m12 center">
-                    <a class="waves-effect waves-light btn-small grey darken-1"><i class="material-icons left">keyboard_arrow_down</i>Lihat SAW</a>
+                    <a class="waves-effect waves-light btn-small grey darken-1"><i class="material-icons left">keyboard_arrow_down</i><span>Lihat</span> SAW</a>
                 </div>
             </div>
         </div>
@@ -532,7 +532,14 @@
                 $('.tabel-perhitungan .matriksX').fadeToggle(1000);
                 $('.tabel-perhitungan .rij').fadeToggle(2000);
                 $('.tabel-perhitungan .nilaiPreferensi').fadeToggle(3000);
-            })
+
+                // masih belum bisa
+                if(true) {
+                    $('.lihat-saw span').html("Sembunyikan");
+                } else {
+                    $('.lihat-saw span').html("Lihat");
+                }
+            });
         })
     </script>
 
