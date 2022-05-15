@@ -15,7 +15,8 @@
                 /* border: 1px solid black; */
                 margin-top: 110px;
                 padding-bottom: 10px;
-                border-radius: 7px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 5px black;
             }
         </style>
     </head>
@@ -55,7 +56,7 @@
                         <br>
                         <div class="row">
                             <div class="col s3 offset-s5">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                <button class="btn waves-effect waves-light" type="submit" name="action">login
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
