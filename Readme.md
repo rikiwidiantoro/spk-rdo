@@ -6,4 +6,6 @@ dibuat dengan :
 3. Framework CSS Materialize
 4. library Javascript jQuery
 5. software pengolah data XAMPP
-6. 
+
+
+sekian, Terimakasih.
