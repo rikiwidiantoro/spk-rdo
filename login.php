@@ -18,6 +18,10 @@
                 border-radius: 10px;
                 box-shadow: 0px 0px 5px black;
             }
+            h5 {
+                font-size: 19px;
+                margin-top: 17px;
+            }
         </style>
     </head>
 
@@ -26,14 +30,14 @@
         <div class="container grey lighten-2">
             <div class="row">
                 <div class="col m8 offset-m2">
-                    <h2 class="center">SPK Reksa Dana Obligasi</h2>
+                    <h3 class="center">SPK Reksa Dana Obligasi</h3>
                     <br>
                     <form action="">
                         <div class="row">
-                            <div class="col s3">
+                            <div class="col s2 offset-s1">
                                 <h5>Username : </h5>
                             </div>
-                            <div class="col s9">
+                            <div class="col s8">
                                 <input id="text" type="text">
                             </div>
                             <!-- <div class="input-field col s8">
@@ -42,10 +46,10 @@
                             </div> -->
                         </div>
                         <div class="row">
-                            <div class="col s3">
+                            <div class="col s2 offset-s1">
                                 <h5>Password : </h5>
                             </div>
-                            <div class="col s9">
+                            <div class="col s8">
                                 <input id="password" type="password">
                             </div>
                             <!-- <div class="input-field col s12">
@@ -56,7 +60,7 @@
                         <br>
                         <div class="row">
                             <div class="col s3 offset-s5">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">login
+                                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="action">login
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
