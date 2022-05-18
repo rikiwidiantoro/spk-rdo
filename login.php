@@ -30,11 +30,14 @@
 
                 header("Location: index.php");
                 exit;
+            } else {
+                echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
             }
         }
     }
 
     $pass = password_hash('admin1234', PASSWORD_DEFAULT);
+    $passss = password_hash('rikiwidiantoro', PASSWORD_BCRYPT);
 
 ?>
 
