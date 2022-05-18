@@ -1,5 +1,15 @@
 <?php
+    error_reporting(0);
     session_start();
+
+    // session
+    session_start();
+
+    if( isset($_SESSION['login']) ) {
+        header("Location: index.php");
+        exit;
+    }
+    // session
 
     include_once('koneksi.php');
 
@@ -25,7 +35,6 @@
     }
 
     $pass = password_hash('admin1234', PASSWORD_DEFAULT);
-    var_dump($pass);
 
 ?>
 

@@ -64,7 +64,7 @@
                     <li><a href="index.php">dasboard</a></li>
                     <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
                     <li><a href="hasil_perangkingan_while.php">hasil while</a></li>
-                    <li><a href="">Logout</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
