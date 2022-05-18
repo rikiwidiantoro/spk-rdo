@@ -17,27 +17,44 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $result = mysqli_query($koneksi, "SELECT * FROM login WHERE username = '$username'");
+        $result = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username'");
 
         // cek username
         if( mysqli_num_rows($result) === 1 ) {
             // cek password
             $row = mysqli_fetch_assoc($result);
+
             if( password_verify($password, $row['password']) ) {
-
-                // cek session
-                $_SESSION['login'] = true;
-
-                header("Location: index.php");
-                exit;
+                if( $row['username'] == 'admin' ) {
+                    $_SESSION['login'] = true;
+                    header('Location: index.php');
+                    exit;
+                } else if( $row['username'] == 'rikiwidiantoro' ) {
+                    $_SESSION['login'] = true;
+                    header('Location: user/index.php');
+                    exit;
+                }
+                
             } else {
                 echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
             }
+
+
+            // if( password_verify($password, $row['password']) ) {
+
+            //     // cek session
+            //     $_SESSION['login'] = true;
+
+            //     header("Location: index.php");
+            //     exit;
+            // } else {
+            //     echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
+            // }
         }
     }
 
     $pass = password_hash('admin1234', PASSWORD_DEFAULT);
-    $passss = password_hash('rikiwidiantoro', PASSWORD_BCRYPT);
+    $passss = password_hash('rikiwidiantoro', PASSWORD_DEFAULT);
 
 ?>
 
