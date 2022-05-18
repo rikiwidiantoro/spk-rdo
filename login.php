@@ -34,7 +34,7 @@
                     header('Location: user/index.php');
                     exit;
                 }
-                
+
             } else {
                 echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
             }
