@@ -1,5 +1,15 @@
 <!-- koneksi -->
 <?php
+
+    // session
+    session_start();
+
+    if( !isset($_SESSION['login']) ) {
+        header("Location: login.php");
+        exit;
+    }
+    // session
+
     include_once('koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");

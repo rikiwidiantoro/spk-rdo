@@ -1,3 +1,34 @@
+<?php
+    session_start();
+
+    include_once('koneksi.php');
+
+    if( isset($_POST['login']) ) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $result = mysqli_query($koneksi, "SELECT * FROM login WHERE username = '$username'");
+
+        // cek username
+        if( mysqli_num_rows($result) === 1 ) {
+            // cek password
+            $row = mysqli_fetch_assoc($result);
+            if( password_verify($password, $row['password']) ) {
+
+                // cek session
+                $_SESSION['login'] = true;
+
+                header("Location: index.php");
+                exit;
+            }
+        }
+    }
+
+    $pass = password_hash('admin1234', PASSWORD_DEFAULT);
+    var_dump($pass);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,13 +63,13 @@
                 <div class="col m8 offset-m2">
                     <h3 class="center">SPK Reksa Dana Obligasi</h3>
                     <br>
-                    <form action="">
+                    <form action="" method="post">
                         <div class="row">
                             <div class="col s2 offset-s1">
-                                <h5>Username : </h5>
+                                <h5 for="username">Username : </h5>
                             </div>
                             <div class="col s8">
-                                <input id="text" type="text">
+                                <input id="text" type="text" name="username">
                             </div>
                             <!-- <div class="input-field col s8">
                                 <input id="text" type="text" class="validate">
@@ -47,10 +78,10 @@
                         </div>
                         <div class="row">
                             <div class="col s2 offset-s1">
-                                <h5>Password : </h5>
+                                <h5 for="password">Password : </h5>
                             </div>
                             <div class="col s8">
-                                <input id="password" type="password">
+                                <input id="password" type="password" name="password">
                             </div>
                             <!-- <div class="input-field col s12">
                                 <input id="password" type="password" class="validate">
@@ -60,7 +91,7 @@
                         <br>
                         <div class="row">
                             <div class="col s3 offset-s5">
-                                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="action">login
+                                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="login">login
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -71,9 +102,11 @@
             <hr>
             <div class="row">
                 <div class="col m4 offset-m2">
+                    <p>username admin : admin</p>
                     <p>username : rikiwidiantoro</p>
                 </div>
                 <div class="col m4">
+                    <p>password admin : admin1234</p>
                     <p>password : rikiwidiantoro</p>
                 </div>
             </div>
