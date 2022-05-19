@@ -4,7 +4,7 @@
     session_start();
 
     if( !isset($_SESSION['login']) ) {
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit;
     }
     // session
@@ -41,6 +41,46 @@
 
 
         <!-- form -->
+        <br>
+        <div class="row center">
+            <div class="col s4 offset-s4">
+                <h4>Tambah Kriteria</h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <table border="1">
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Kriteria</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Kriteria</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Cost/Benefit</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Bobot</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center">
+                            <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="login">login
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <!-- form -->
 
 
