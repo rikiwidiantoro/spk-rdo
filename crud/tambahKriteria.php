@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s6 offset-s3">
+            <div class="col s6 offset-s3 center">
                 <table border="1">
                     <tr>
                         <td>ID</td>
@@ -71,14 +71,12 @@
                         <td>Bobot</td>
                         <td><input type="text"></td>
                     </tr>
-                    <tr>
-                        <td colspan="2" class="center">
-                            <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="login">login
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </td>
-                    </tr>
+                    
                 </table>
+                <br>
+                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="tambah">Tambah Data
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </div>
         <!-- form -->

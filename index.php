@@ -33,6 +33,7 @@
     <title>Dasboard</title>
 
     <!-- css sendiri -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
         .kriteria .tambah-kriteria {
             margin-top: 20px;
@@ -50,7 +51,7 @@
             padding: 4%;
         }
         footer {
-            padding: 10px 70px
+            padding: 20px 80px
         }
     </style>
 </head>
@@ -200,13 +201,25 @@
     <!-- footer -->
     <footer class="grey darken-2 white-text">
         <div class="row">
-            <div class="col s7">
-                <h5>&copy; Riki Widiantoro</h5>
+            <div class="col s8">
+                <h6>Riki Widiantoro | Teknik Informatika</h6>
                 <p>Website Sistem Pendukung Keputusan Rekomendasi Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
+                <h6>&copy; 2022</h6>
             </div>
-            <div class="col s5">
-                <h6>Kontak Developer</h6>
-                <a href="https://github.com/rikiwidiantoro" target="_blank">rikiwidiantoro</a>
+            <div class="col s2 offset-s1">
+                <h6>Kontak Developer :</h6>
+                <div class="sosmed">
+                    <p>
+                        <a href="mailto:rikitoro12@gmail.com?subject=subject text" target="_blank" class="white-text"><i class="fa fa-envelope"></i> rikitoro12@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/rikiwidiantoro" target="_blank" class="white-text"><i class="fab fa-github"></i> rikiwidiantoro </a>
+                    </p>
+                    <p>
+                        <a href="https://rikiwidiantoro.github.io/" target="_blank" class="white-text"><i class="fas fa-blog"></i> Riki Widiantoro</a>
+                    </p>
+                </div>
+                
             </div>
         </div>
     </footer>
