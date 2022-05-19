@@ -73,6 +73,17 @@
     <!-- navbar -->
 
 
+    <!-- welcome -->
+    <br>
+    <div class="row container">
+        <div class="col">
+            <h4>Selamat Datang User!</h3>
+            <hr>
+        </div>
+    </div>
+    <!-- welcome -->
+
+
     <!-- tabel kriteria -->
     <br>
     <div id="kriteria" class="kriteria">

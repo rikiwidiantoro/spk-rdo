@@ -50,8 +50,7 @@
             padding: 4%;
         }
         footer {
-            height: 70px;
-            line-height: 70px;
+            padding: 10px 70px
         }
     </style>
 </head>
@@ -71,6 +70,17 @@
         </nav>
     </div>
     <!-- navbar -->
+
+
+    <!-- welcome -->
+    <br>
+    <div class="row container">
+        <div class="col">
+            <h4>Selamat Datang Admin!</h3>
+            <hr>
+        </div>
+    </div>
+    <!-- welcome -->
 
 
     <!-- tabel kriteria -->
@@ -188,8 +198,17 @@
 
 
     <!-- footer -->
-    <footer class="grey darken-2 white-text center">
-        <p>&copy; Riki Widiantoro</p>
+    <footer class="grey darken-2 white-text">
+        <div class="row">
+            <div class="col s7">
+                <h5>&copy; Riki Widiantoro</h5>
+                <p>Website Sistem Pendukung Keputusan Rekomendasi Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
+            </div>
+            <div class="col s5">
+                <h6>Kontak Developer</h6>
+                <a href="https://github.com/rikiwidiantoro" target="_blank">rikiwidiantoro</a>
+            </div>
+        </div>
     </footer>
     <!-- footer -->
 
