@@ -9,6 +9,24 @@
     }
     // session
 
+    include_once('../koneksi.php');
+
+    // mengambil data dari form
+    if( isset($_POST['submit']) ) {
+        $noKriteria = $_POST['noKriteria'];
+        $namaKriteria = $_POST['namaKriteria'];
+        $costBenefit = $_POST['costBenefit'];
+        $bobot = $_POST['bobot'];
+
+
+        // mengirim data ke database
+        $tambahKriteria = mysqli_query($koneksi, "INSERT INTO `kriteria`(`id_kriteria`, `no_kriteria`, `nama_kriteria`, `cost_benefit`, `bobot_kriteria`) VALUES('', '$noKriteria', '$namaKriteria', '$costBenefit', '$bobot');");
+
+        // alert dan re direct
+        echo "<script>alert('Data Kriteria berhasil ditambahkan!'); document.location.href = '../index.php';</script>";
+    }
+
+
 ?>
 
 
@@ -50,33 +68,30 @@
         </div>
         <div class="row">
             <div class="col s6 offset-s3 center">
-                <table border="1">
-                    <tr>
-                        <td>ID</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Kriteria</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Nama Kriteria</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Cost/Benefit</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Bobot</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    
-                </table>
-                <br>
-                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="tambah">Tambah Data
-                    <i class="material-icons right">send</i>
-                </button>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <table>
+                        <tr>
+                            <td>Nomor Kriteria</td>
+                            <td><input type="text" name="noKriteria"></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Kriteria</td>
+                            <td><input type="text" name="namaKriteria"></td>
+                        </tr>
+                        <tr>
+                            <td>Cost/Benefit</td>
+                            <td><input type="text" name="costBenefit"></td>
+                        </tr>
+                        <tr>
+                            <td>Bobot</td>
+                            <td><input type="text" name="bobot"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="submit">Tambah Data
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
             </div>
         </div>
         <!-- form -->
