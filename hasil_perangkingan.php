@@ -509,7 +509,7 @@
         <div class="container">
             <div class="row">
                 <div class="col m12 center">
-                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">keyboard_arrow_down</i>Lihat Hasil</a>
+                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">keyboard_arrow_down</i><span>Lihat</span> Hasil</a>
                 </div>
             </div>
         </div>
@@ -664,6 +664,8 @@
             $('.tabel-perhitungan .rij').css('display', 'none');
             $('.tabel-perhitungan .nilaiPreferensi').css('display', 'none');
 
+            $('.hasil-rangking').css('display', 'none');
+
             $('.lihat-saw').click(function() {
                 $('.tabel-perhitungan .matriksX').fadeToggle(1000);
                 $('.tabel-perhitungan .rij').fadeToggle(2000);
@@ -674,6 +676,16 @@
                     $('.lihat-saw span').html("Sembunyikan");
                 } else {
                     $('.lihat-saw span').html("Lihat");
+                }
+            });
+            $('.lihat-hasil').click(function() {
+                $('.hasil-rangking').fadeToggle(2000);
+
+                // masih belum bisa
+                if(true) {
+                    $('.lihat-hasil span').html("Sembunyikan");
+                } else {
+                    $('.lihat-hasil span').html("Lihat");
                 }
             });
         })
