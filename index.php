@@ -119,7 +119,7 @@
                                         <td class='center'>". $kriteria['bobot_kriteria']."</td>
                                         <td class='center'>
                                             <a href='crud/editKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
+                                            <a href='crud/hapusKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
                                     </tr>
                                     
