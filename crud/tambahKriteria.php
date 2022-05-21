@@ -72,19 +72,19 @@
                     <table>
                         <tr>
                             <td>Nomor Kriteria</td>
-                            <td><input type="text" name="noKriteria"></td>
+                            <td><input type="text" name="noKriteria" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <td>Nama Kriteria</td>
-                            <td><input type="text" name="namaKriteria"></td>
+                            <td><input type="text" name="namaKriteria" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <td>Cost/Benefit</td>
-                            <td><input type="text" name="costBenefit"></td>
+                            <td><input type="text" name="costBenefit" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <td>Bobot</td>
-                            <td><input type="text" name="bobot"></td>
+                            <td><input type="text" name="bobot" autocomplete="off"></td>
                         </tr>
                     </table>
                     <br>
