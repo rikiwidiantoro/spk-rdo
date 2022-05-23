@@ -674,8 +674,11 @@
                 // masih belum bisa
                 if(true) {
                     $('.lihat-saw span').html("Sembunyikan");
-                } else {
+                } else if(true){
                     $('.lihat-saw span').html("Lihat");
+                } else {
+                    $('.lihat-saw span').html("Sembunyikan");
+
                 }
             });
             $('.lihat-hasil').click(function() {
