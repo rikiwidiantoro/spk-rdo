@@ -204,7 +204,7 @@
             <div class="col s8">
                 <h6>Riki Widiantoro | Teknik Informatika</h6>
                 <p>Website Sistem Pendukung Keputusan Rekomendasi Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
-                <h6>&copy; 2022</h6>
+                <h6>&copy; 2022 | SKRIPSI</h6>
             </div>
             <div class="col s2 offset-s1">
                 <h6>Kontak Developer :</h6>

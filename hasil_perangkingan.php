@@ -30,18 +30,9 @@
     $max = mysqli_fetch_array($nMax);
     $min = mysqli_fetch_array($nMin);
 
-    // function angka() {
-    //     for($i=1; $i<5;$i++) {
-    //         echo $i;
-    //     }
-    // }
 
-    // angka();
-    function uwu() {
-        for($i=1; $i<5;$i++) {
-            echo $i;
-        }
-    }
+    // menghilangkan pesan error
+    error_reporting(0);
 
 ?>
 
@@ -378,8 +369,8 @@
                                 <tr>
                                     <th>Alternatif</th>
                                     <!-- pengulangan nama kriteria dari tabel kriteria -->
+                                    <th>Nama Produk</th>
                                     <th>Nilai Preferensi</th>
-                                    <th>Ranking</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -485,11 +476,11 @@
                                         
                                         $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
 
-                                        
 
                                         echo "
                                             <tr>
                                                 <td><b>". $alternatif['no_alternatif'] ."</b></td>
+                                                <td>". $alternatif['kriteria1'] ."</td>
                                                 <td>". $nilaiPreferensi ."</td>
                                             </tr>
                                         ";
@@ -547,39 +538,27 @@
                         </thead>
                         <tbody>
                             <?php
-                                // foreach($ranking as $rank) {
-                                //     $i=1;
-                                //     $i++;
+                                foreach($ranking as $rank) {
+                                    // for($i=1; $i<5;$i++) {
+                                    //     global $i;
+                                    // }
+                                    $i++;
 
-                                //     echo "
-                                //         <tr>
-                                //         <td><b>". $rank['no_alternatif'] ."</b></td>
-                                //         <td>". $rank['nama_produk'] ."</td>
-                                //             <td>". $rank['kriteria1'] ."</td>
-                                //             <td>". $rank['nilai_preferensi'] ."</td>
-                                //             <td>". $i ."</td>
-                                //         </tr>
-                                //     ";
-                                // }
-                                uwu()
+                                    echo "
+                                        <tr>
+                                            <td><b>". $rank['no_alternatif'] ."</b></td>
+                                            <td>". $rank['nama_produk'] ."</td>
+                                            <td>". $rank['kriteria1'] ."</td>
+                                            <td>". $rank['nilai_preferensi'] ."</td>
+                                            <td>". $i ."</td>
+                                        </tr>
+                                    ";
+                                    
+                                }
+                                
                             ?>
                             
-                            <?php foreach ($ranking as $rank) { ?>
-                                
-                                <tr>
-                                    <td><b><?= $rank['no_alternatif'] ?></b></td>
-                                    <td><?= $rank['nama_produk'] ?></td>
-                                    <td><?= $rank['kriteria1'] ?></td>
-                                    <td><?= $rank['nilai_preferensi'] ?></td>
-                                    <td><?php
-                                        // for($i=1; $i<5;$i++) {
-                                        //     echo $i;
-                                        // }
-                                        
-                                    ?></td>
-
-                                </tr>
-                            <?php } ?>
+                            
                         </tbody>
                     </table>
                 </div>
