@@ -1,4 +1,3 @@
-<!-- koneksi -->
 <?php
 
     // session
@@ -10,6 +9,7 @@
     }
     // session
 
+    // koneksi
     include_once('koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
