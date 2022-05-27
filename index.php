@@ -145,7 +145,7 @@
                     <h5>Tabel Alternatif</h5>
                 </div>
                 <div class="col m3">
-                    <a class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
+                    <a href="crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
                 </div>
             </div>
             <div class="row">
