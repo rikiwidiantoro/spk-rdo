@@ -28,7 +28,7 @@
         $tambahKriteria = mysqli_query($koneksi, "INSERT INTO `alternatif`(`id_alternatif`, `no_alternatif`, `nama_produk`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$noAlternatif', '$namaProduk', '$kriteria1', '$kriteria2', '$kriteria3', '$kriteria4', '$kriteria5', '$kriteria6', '$kriteria7');");
 
         // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil ditambahkan!'); document.location.href = '../index.php';</script>";
+        echo "<script>alert('Data Alternatif berhasil ditambahkan!'); document.location.href = '../index.php';</script>";
     }
 
 
