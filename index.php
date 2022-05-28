@@ -186,7 +186,7 @@
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
                                         <td class='center'>
                                             <a href='crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
+                                            <a href='crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
                                     </tr>
                                     
