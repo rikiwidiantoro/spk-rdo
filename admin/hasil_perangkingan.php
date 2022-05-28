@@ -5,12 +5,12 @@
     session_start();
 
     if( !isset($_SESSION['login']) ) {
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit;
     }
     // session
 
-    include_once('koneksi.php');
+    include_once('../koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
@@ -68,7 +68,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
                     <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>

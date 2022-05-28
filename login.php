@@ -3,7 +3,7 @@
     session_start();
 
     if( isset($_SESSION['login']) ) {
-        header("Location: index.php");
+        header("Location: admin/index.php");
         exit;
     }
     // session
@@ -24,13 +24,14 @@
             if( password_verify($password, $row['password']) ) {
                 if( $row['username'] == 'admin' ) {
                     $_SESSION['login'] = true;
-                    header('Location: index.php');
+                    header('Location: admin/index.php');
                     exit;
-                } else if( $row['username'] == 'rikiwidiantoro' ) {
-                    $_SESSION['login'] = true;
-                    header('Location: user/index.php');
-                    exit;
-                }
+                } 
+                // else if( $row['username'] == 'rikiwidiantoro' ) {
+                //     $_SESSION['login'] = true;
+                //     header('Location: user/index.php');
+                //     exit;
+                // }
 
             } else {
                 echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
@@ -66,7 +67,7 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Masuk</title>
+        <title>Masuk Admin</title>
         <style>
             .container {
                 /* border: 1px solid black; */
@@ -116,7 +117,10 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col s3 offset-s5">
+                            <div class="col s3 offset-s3">
+                                <a href="index.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
+                            </div>
+                            <div class="col s3">
                                 <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="login">login
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -126,14 +130,19 @@
                 </div>
             </div>
             <hr>
-            <div class="row">
-                <div class="col m4 offset-m2">
-                    <p>username admin : admin</p>
-                    <p>username : rikiwidiantoro</p>
+            <div class="row center">
+                <div class="col m3 offset-m2">
+                    <p>username : admin</p>
+                    <!-- <p>username : rikiwidiantoro</p> -->
                 </div>
-                <div class="col m4">
-                    <p>password admin : admin1234</p>
-                    <p>password : rikiwidiantoro</p>
+                <div class="col m3 offset-m2">
+                    <p>password : admin1234</p>
+                    <!-- <p>password : rikiwidiantoro</p> -->
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col m10 offset-m1">
+                    <a href="index.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
                 </div>
             </div>
         </div>

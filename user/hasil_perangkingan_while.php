@@ -2,12 +2,12 @@
 <?php
 
     // session
-    session_start();
+    // session_start();
 
-    if( !isset($_SESSION['login']) ) {
-        header("Location: ../login.php");
-        exit;
-    }
+    // if( !isset($_SESSION['login']) ) {
+    //     header("Location: ../login.php");
+    //     exit;
+    // }
     // session
 
     include_once('../koneksi.php');
@@ -58,9 +58,9 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.php">dasboard</a></li>
+                    <li><a href="../index.php">dasboard</a></li>
                     <li><a href="hasil_perangkingan_while.php">hasil perangkingan while</a></li>
-                    <li><a href="../logout.php">Logout</a></li>
+                    <li><a href="../login.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons right">send</i>Admin</a></li>
                 </ul>
             </div>
         </nav>

@@ -1,15 +1,15 @@
+<!-- koneksi -->
 <?php
 
     // session
-    session_start();
+    // session_start();
 
-    if( !isset($_SESSION['login']) ) {
-        header("Location: login.php");
-        exit;
-    }
+    // if( !isset($_SESSION['login']) ) {
+    //     header("Location: ../login.php");
+    //     exit;
+    // }
     // session
 
-    // koneksi
     include_once('koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
@@ -33,7 +33,6 @@
     <title>Dasboard</title>
 
     <!-- css sendiri -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
         .kriteria .tambah-kriteria {
             margin-top: 20px;
@@ -50,12 +49,9 @@
         .con {
             padding: 4%;
         }
-        .alternatif .pesan-update {
-            font-style: italic;
-            font-size: 13px;
-        }
         footer {
-            padding: 20px 80px
+            height: 70px;
+            line-height: 70px;
         }
     </style>
 </head>
@@ -68,8 +64,8 @@
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
-                    <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="user/hasil_perangkingan_while.php">hasil perangkingan while</a></li>
+                    <li><a href="login.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons right">send</i>Admin</a></li>
                 </ul>
             </div>
         </nav>
@@ -81,7 +77,7 @@
     <br>
     <div class="row container">
         <div class="col">
-            <h4>Selamat Datang Admin!</h3>
+            <h4>Selamat Datang User!</h3>
             <hr>
         </div>
     </div>
@@ -96,9 +92,6 @@
                 <div class="col m9">
                     <h5>Tabel Kriteria</h5>
                 </div>
-                <div class="col m3">
-                    <a href="crud/tambahKriteria.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
-                </div>
             </div>
             <div class="row">
                 <div class="col m12">
@@ -109,7 +102,6 @@
                                 <th>Nama Kriteria</th>
                                 <th>Cost/Benefit</th>
                                 <th>Bobot</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -121,10 +113,6 @@
                                         <td>". $kriteria['nama_kriteria'] ."</td>
                                         <td class='center'>". $kriteria['cost_benefit'] ."</td>
                                         <td class='center'>". $kriteria['bobot_kriteria']."</td>
-                                        <td class='center'>
-                                            <a href='crud/editKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='crud/hapusKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
-                                        </td>
                                     </tr>
                                     
                                     ";
@@ -148,9 +136,6 @@
                 <div class="col m9">
                     <h5>Tabel Alternatif</h5>
                 </div>
-                <div class="col m3">
-                    <a href="crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
-                </div>
             </div>
             <div class="row">
                 <div class="col m12">
@@ -167,7 +152,6 @@
                                         ";
                                     }
                                 ?>
-                                <th style="width: 15%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -184,10 +168,6 @@
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td class='center'>". $alternatif['kriteria6']."</td>
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
-                                        <td class='center'>
-                                            <a href='crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
-                                        </td>
                                     </tr>
                                     
                                     ";
@@ -197,36 +177,14 @@
                     </table>
                 </div>
             </div>
-            <span class="pesan-update">*Data diperbaharui terakhir tanggal 20 Mei 2022</span>
         </div>
     </div>
     <!-- tabel alternatif -->
 
 
     <!-- footer -->
-    <footer class="grey darken-2 white-text">
-        <div class="row">
-            <div class="col s8">
-                <h6>Riki Widiantoro | Teknik Informatika</h6>
-                <p>Website Sistem Pendukung Keputusan Rekomendasi Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
-                <h6>&copy; 2022 | SKRIPSI</h6>
-            </div>
-            <div class="col s2 offset-s1">
-                <h6>Kontak Developer :</h6>
-                <div class="sosmed">
-                    <p>
-                        <a href="mailto:rikitoro12@gmail.com?subject=subject text" target="_blank" class="white-text"><i class="fa fa-envelope"></i> rikitoro12@gmail.com</a>
-                    </p>
-                    <p>
-                        <a href="https://github.com/rikiwidiantoro" target="_blank" class="white-text"><i class="fab fa-github"></i> rikiwidiantoro </a>
-                    </p>
-                    <p>
-                        <a href="https://rikiwidiantoro.github.io/" target="_blank" class="white-text"><i class="fas fa-blog"></i> rikiwidiantoro.github.io</a>
-                    </p>
-                </div>
-                
-            </div>
-        </div>
+    <footer class="grey darken-2 white-text center">
+        <p>&copy; Riki Widiantoro</p>
     </footer>
     <!-- footer -->
 
