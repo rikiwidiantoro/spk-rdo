@@ -50,6 +50,10 @@
         .con {
             padding: 4%;
         }
+        .alternatif .pesan-update {
+            font-style: italic;
+            font-size: 13px;
+        }
         footer {
             padding: 20px 80px
         }
@@ -181,7 +185,7 @@
                                         <td class='center'>". $alternatif['kriteria6']."</td>
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
                                         <td class='center'>
-                                            <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
+                                            <a href='crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
                                             <a class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
                                     </tr>
@@ -193,6 +197,7 @@
                     </table>
                 </div>
             </div>
+            <span class="pesan-update">*Data diperbaharui terakhir tanggal 20 Mei 2022</span>
         </div>
     </div>
     <!-- tabel alternatif -->

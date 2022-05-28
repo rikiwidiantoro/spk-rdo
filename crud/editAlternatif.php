@@ -13,14 +13,19 @@
 
     // query data dari database
     $id = $_GET['id'];
-    $tampilData = mysqli_query($koneksi, "SELECT * FROM kriteria WHERE id_kriteria = '$id';");
+    $tampilData = mysqli_query($koneksi, "SELECT * FROM alternatif WHERE id_alternatif = '$id';");
 
     // looping query data
-    while( $dataKriteria = mysqli_fetch_array($tampilData) ) {
-        $nomor = $dataKriteria['no_kriteria'];
-        $nama = $dataKriteria['nama_kriteria'];
-        $costBenefit = $dataKriteria['cost_benefit'];
-        $bobot = $dataKriteria['bobot_kriteria'];
+    while( $dataAlternatif = mysqli_fetch_array($tampilData) ) {
+        $nomor = $dataAlternatif['no_alternatif'];
+        $nama = $dataAlternatif['nama_produk'];
+        $kriteria1 = $dataAlternatif['kriteria1'];
+        $kriteria2 = $dataAlternatif['kriteria2'];
+        $kriteria3 = $dataAlternatif['kriteria3'];
+        $kriteria4 = $dataAlternatif['kriteria4'];
+        $kriteria5 = $dataAlternatif['kriteria5'];
+        $kriteria6 = $dataAlternatif['kriteria6'];
+        $kriteria7 = $dataAlternatif['kriteria7'];
     }
 
 
@@ -89,20 +94,40 @@
                             <td><input class="grey-text" type="text" name="id" value="<?= $id ?>" autocomplete="off" readonly=""></td>
                         </tr>
                         <tr>
-                            <td>Nomor Kriteria</td>
-                            <td><input type="text" name="noKriteria" value="<?= $nomor ?>" autocomplete="off"></td>
+                            <td>Nomor Alternatif</td>
+                            <td><input type="text" name="noAlternatif" value="<?= $nomor ?>" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Nama Kriteria</td>
-                            <td><input type="text" name="namaKriteria" value="<?= $nama ?>" autocomplete="off"></td>
+                            <td>Nama Produk</td>
+                            <td><input type="text" name="namaProduk" value="<?= $nama ?>" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Cost/Benefit</td>
-                            <td><input type="text" name="costBenefit" value="<?= $costBenefit ?>" autocomplete="off"></td>
+                            <td>Manajer Investasi</td>
+                            <td><input type="text" name="kriteria1" value="<?= $kriteria1 ?>" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Bobot</td>
-                            <td><input type="text" name="bobot" value="<?= $bobot ?>" autocomplete="off"></td>
+                            <td>Total AUM</td>
+                            <td><input type="text" name="kriteria2" value="<?= $kriteria2 ?>" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>CAGR 1 Tahun</td>
+                            <td><input type="text" name="kriteria3" value="<?= $kriteria3 ?>" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Drawdown 1 Tahun</td>
+                            <td><input type="text" name="kriteria4" value="<?= $kriteria4 ?>" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Expense Ratio</td>
+                            <td><input type="text" name="kriteria5" value="<?= $kriteria5 ?>" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Minimal Pembelian</td>
+                            <td><input type="text" name="kriteria6" value="<?= $kriteria6 ?>" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Lama Peluncuran</td>
+                            <td><input type="text" name="kriteria7" value="<?= $kriteria7 ?>" autocomplete="off"></td>
                         </tr>
                     </table>
                     <br>
