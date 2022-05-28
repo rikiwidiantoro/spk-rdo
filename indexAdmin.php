@@ -4,13 +4,13 @@
     session_start();
 
     if( !isset($_SESSION['login']) ) {
-        header("Location: ../login.php");
+        header("Location: login.php");
         exit;
     }
     // session
 
     // koneksi
-    include_once('../koneksi.php');
+    include_once('koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
@@ -67,9 +67,9 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.php">dasboard</a></li>
-                    <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
-                    <li><a href="../logout.php">Logout</a></li>
+                    <li><a href="indexAdmin.php">dasboard</a></li>
+                    <li><a href="admin/hasil_perangkingan.php">hasil perangkingan</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>

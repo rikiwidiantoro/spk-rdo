@@ -66,7 +66,7 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.php">dasboard</a></li>
+                    <li><a href="../indexAdmin.php">dasboard</a></li>
                     <li><a href="hasil_perangkingan.php">hasil perangkingan</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>

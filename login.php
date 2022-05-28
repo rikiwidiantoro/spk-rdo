@@ -3,7 +3,7 @@
     session_start();
 
     if( isset($_SESSION['login']) ) {
-        header("Location: admin/index.php");
+        header("Location: indexAdmin.php");
         exit;
     }
     // session
@@ -24,7 +24,7 @@
             if( password_verify($password, $row['password']) ) {
                 if( $row['username'] == 'admin' ) {
                     $_SESSION['login'] = true;
-                    header('Location: admin/index.php');
+                    header('Location: indexAdmin.php');
                     exit;
                 } 
                 // else if( $row['username'] == 'rikiwidiantoro' ) {
