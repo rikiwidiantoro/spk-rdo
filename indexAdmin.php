@@ -48,7 +48,7 @@
             font-size: 11px;
         }
         .con {
-            padding: 4%;
+            padding: 2% 4%;
         }
         .alternatif .pesan-update {
             font-style: italic;
@@ -68,7 +68,7 @@
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
-                    <li><a href="admin/hasil_perangkingan.php">hasil perangkingan</a></li>
+                    <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
     <br>
     <div class="row container">
         <div class="col">
-            <h4>Selamat Datang Admin!</h3>
+            <h4>Selamat Datang, Admin!</h3>
             <hr>
         </div>
     </div>
@@ -97,7 +97,7 @@
                     <h5>Tabel Kriteria</h5>
                 </div>
                 <div class="col m3">
-                    <a href="../crud/tambahKriteria.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
+                    <a href="crud/tambahKriteria.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
                 </div>
             </div>
             <div class="row">
@@ -122,8 +122,8 @@
                                         <td class='center'>". $kriteria['cost_benefit'] ."</td>
                                         <td class='center'>". $kriteria['bobot_kriteria']."</td>
                                         <td class='center'>
-                                            <a href='../crud/editKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='../crud/hapusKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
+                                            <a href='crud/editKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
+                                            <a href='crud/hapusKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
                                     </tr>
                                     
@@ -140,7 +140,6 @@
     <!-- tabel kriteria -->
 
     <hr>
-    <br>
     <!-- tabel alternatif -->
     <div id="alternatif" class="alternatif">
         <div class="con">
@@ -149,7 +148,7 @@
                     <h5>Tabel Alternatif</h5>
                 </div>
                 <div class="col m3">
-                    <a href="../crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
+                    <a href="crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
                 </div>
             </div>
             <div class="row">
@@ -182,11 +181,11 @@
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
-                                        <td class='center'>". $alternatif['kriteria6']."</td>
+                                        <td class='right'>Rp ". $alternatif['kriteria6']."</td>
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
                                         <td class='center'>
-                                            <a href='../crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='../crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
+                                            <a href='crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
+                                            <a href='crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
                                     </tr>
                                     

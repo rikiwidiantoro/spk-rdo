@@ -47,7 +47,7 @@
             font-size: 11px;
         }
         .con {
-            padding: 4%;
+            padding: 2% 5%;
         }
         footer {
             height: 70px;
@@ -64,7 +64,7 @@
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
-                    <li><a href="user/hasil_perangkingan_while.php">hasil perangkingan while</a></li>
+                    <li><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
                     <li><a href="login.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons right">send</i>Admin</a></li>
                 </ul>
             </div>
@@ -75,9 +75,9 @@
 
     <!-- welcome -->
     <br>
-    <div class="row container">
+    <div class="row container ucapanSelamat">
         <div class="col">
-            <h4>Selamat Datang User!</h3>
+            <h4>Selamat Datang, <span>User</span>!</h3>
             <hr>
         </div>
     </div>
@@ -128,7 +128,6 @@
     <!-- tabel kriteria -->
 
     <hr>
-    <br>
     <!-- tabel alternatif -->
     <div id="alternatif" class="alternatif">
         <div class="con">
@@ -166,7 +165,7 @@
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
-                                        <td class='center'>". $alternatif['kriteria6']."</td>
+                                        <td class='right'>Rp ". $alternatif['kriteria6']."</td>
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
                                     </tr>
                                     
@@ -194,6 +193,20 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // window.addEventListener('load', function() {
+        //     let namaUser = prompt('Ketikan nama Anda!');
+        //     console.log(namaUser);
+            
+        // });
+        $(document).ready(function() {
+
+            // popup untuk ucapan selamat datang
+            let namaUser = prompt('Ketikan nama Anda!');
+            $('.ucapanSelamat h4 span').html(namaUser);
+
+        });
+    </script>
 
 </body>
 </html>
