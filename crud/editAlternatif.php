@@ -32,17 +32,22 @@
     // mengambil data dari form
     if( isset($_POST['submit']) ) {
         $id = $_POST['id'];
-        $noKriteria = $_POST['noKriteria'];
-        $namaKriteria = $_POST['namaKriteria'];
-        $costBenefit = $_POST['costBenefit'];
-        $bobot = $_POST['bobot'];
+        $noAlternatif = $_POST['noAlternatif'];
+        $namaProduk = $_POST['namaProduk'];
+        $kriteria1 = $_POST['kriteria1'];
+        $kriteria2 = $_POST['kriteria2'];
+        $kriteria3 = $_POST['kriteria3'];
+        $kriteria4 = $_POST['kriteria4'];
+        $kriteria5 = $_POST['kriteria5'];
+        $kriteria6 = $_POST['kriteria6'];
+        $kriteria7 = $_POST['kriteria7'];
 
 
         // mengirim data baru ke database
-        $editKriteria = mysqli_query($koneksi, "UPDATE kriteria SET no_kriteria = '$noKriteria', nama_kriteria = '$namaKriteria', cost_benefit = '$costBenefit', bobot_kriteria = '$bobot' WHERE id_kriteria = '$id';");
+        $editKriteria = mysqli_query($koneksi, "UPDATE alternatif SET no_alternatif = '$noAlternatif', nama_produk = '$namaProduk', kriteria1 = '$kriteria1', kriteria2 = '$kriteria2', kriteria3 = '$kriteria3', kriteria4 = '$kriteria4', kriteria5 = '$kriteria5', kriteria6 = '$kriteria6', kriteria7 = '$kriteria7' WHERE id_alternatif = '$id';");
 
         // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil di edit!'); document.location.href = '../index.php';</script>";
+        echo "<script>alert('Data Alternatif berhasil di edit!'); document.location.href = '../index.php';</script>";
     }
 
 
