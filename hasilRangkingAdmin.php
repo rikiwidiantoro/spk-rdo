@@ -15,10 +15,20 @@
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
     $converts = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+
+    $conver = mysqli_query($koneksi, "SELECT id_alternatif as idd FROM convert_alternatif");
+    // $idd = mysqli_fetch_array($conver);
+    // var_dump($conver);
+    // while($d = mysqli_fetch_array($conver)) {
+    //     echo $d['idd'];
+    // };
+
     $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
     $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
     $ranking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
+    // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
+    // $noa = mysqli_fetch_array($noo);
 
     // $bobot = mysqli_query($koneksi, "SELECT bobot_kriteria FROM kriteria");
     // $bb = mysqli_fetch_array($bobot);
@@ -67,7 +77,7 @@
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
-                    <li><a href="hasilRangkinganAdmin.php">hasil perangkingan</a></li>
+                    <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -214,6 +224,14 @@
                                                 <td>". $x7 ."</td>
                                             </tr>
                                         ";
+
+                                        $iii = $alternatif['id_alternatif']; //id alternatif tabel alternatif
+                                        // while($d = mysqli_fetch_array($conver)) { // id alternatif tabel convert alternatif
+                                        //     // echo $d['idd'];
+                                        // };
+                                        
+                                        $updateTabelConvert = mysqli_query($koneksi, "UPDATE convert_alternatif SET kriteria1 = '$x1', kriteria2 = '$x2', kriteria3 = '$x3', kriteria4 = '$x4', kriteria5 = '$x5', kriteria6 = '$x6', kriteria7 = '$x7' WHERE id_alternatif = '$iii';");
+
                                         
                                     }
                                 ?>
@@ -467,14 +485,21 @@
                                             (($x7 / $max['maxK7']) * $bobot[6]),2
                                         );
 
-                                        // $jumlah = count($nilaiPreferensi[0]);
-                                        // for($a=0;)
-                                        // $jumlah++;
-
                                         
                                         $no_al = $alternatif['no_alternatif'];
                                         
                                         $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
+                                        
+
+                                        // jika ada nomor alternatif makan update data jika tidak ada maka tambah data ke t.rangking
+                                        // $no_al = $alternatif['no_alternatif'];
+                                        // $namaProduk = $alternatif['nama_produk'];
+                                        // if( $no_al === $alternatif['no_alternatif'] ) {
+                                        //     $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
+                                        // } else {
+                                        //     $tambahDataNilaiPreferensi = mysqli_query($koneksi, "INSERT INTO `rangking`(`id_rank`, `no_alternatif`, `nama_produk`, `kriteria1`, `nilai_preferensi`) VALUES('', '$no_al', '$namaProduk', '$nilaiPreferensi');");
+                                        // }
+                                        // var_dump($no_al === $noa['no_al_rank']);
 
 
                                         echo "
