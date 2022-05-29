@@ -19,19 +19,20 @@
     $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
     $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
-    $ranking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
+    // $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
     
 
     // untuk pengkondisian tambah, update t.convert & t.rangking
     $r = mysqli_query($koneksi, "SELECT * FROM rangking");
     $w = mysqli_num_rows($alternatifs);
     $ww = mysqli_num_rows($converts);
+    $www = mysqli_num_rows($r);
     global $w;
     global $ww;
-    $www = mysqli_num_rows($r);
     global $www;
 
 
+    $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
     // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
     // $noa = mysqli_fetch_array($noo);
 
@@ -234,17 +235,20 @@
                                             </tr>
                                         ";
 
-                                        $iii = $alternatif['id_alternatif']; //id alternatif tabel alternatif
+                                        $iii = $alternatif['no_alternatif']; //id alternatif tabel alternatif
                                         // while($d = mysqli_fetch_array($conver)) { // id alternatif tabel convert alternatif
                                         //     // echo $d['idd'];
                                         // };
+                                        if($w == $ww) {
+                                            // echo '1';
+                                            $updateTabelConvert = mysqli_query($koneksi, "UPDATE convert_alternatif SET kriteria1 = '$x1', kriteria2 = '$x2', kriteria3 = '$x3', kriteria4 = '$x4', kriteria5 = '$x5', kriteria6 = '$x6', kriteria7 = '$x7' WHERE no_alternatif = '$iii';");
+                                        } else if($w < $ww) {
+                                            $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
+                                        }
                                     }
-                                    if($w == $ww) {
-                                        // echo '1';
-                                        $updateTabelConvert = mysqli_query($koneksi, "UPDATE convert_alternatif SET kriteria1 = '$x1', kriteria2 = '$x2', kriteria3 = '$x3', kriteria4 = '$x4', kriteria5 = '$x5', kriteria6 = '$x6', kriteria7 = '$x7' WHERE id_alternatif = '$iii';");
-                                    } else {
-                                        $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `id_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7');");
-                                    }
+                                    if($w > $ww) {
+                                        $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `no_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7');");
+                                    } 
                                 ?>
                             </tbody>
                         </table>
@@ -530,18 +534,26 @@
                                                 <td>". $nilaiPreferensi ."</td>
                                             </tr>
                                         ";
+                                        echo $nilaiPreferensi;
+                                        echo '<br>';
+                                        if($w == $www) {
+                                            // echo '1';
+                                            $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
+                                        } 
+                                        // else if($w < $www) {
+                                        //     $hapusDataNilaiPreferensi = mysqli_query($koneksi, "DELETE FROM rangking WHERE no_alternatif = '$no_al'");
+                                        //     echo $w;
+                                        //     echo '==';
+                                        //     echo $www;
+                                        //     echo '===';
+                                        //     echo $no_al;
+                                        // }
                                     }
-                                    if($w == $www) {
-                                        // echo '1';
-                                        $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
-                                    } else {
+                                    if($w > $www) {
                                         $tambahDataNilaiPreferensi = mysqli_query($koneksi, "INSERT INTO `rangking`(`id_rank`, `no_alternatif`, `nama_produk`, `kriteria1`, `nilai_preferensi`) VALUES('', '$no_al', '$namaProduk', '$kriteria1', '$nilaiPreferensi');");
-                                        // echo '0';
-                                        // echo $no_al;
-                                        // echo $namaProduk;
-                                        // echo $kriteria1;
-                                        // echo $nilaiPreferensi;
-                                    }
+                                        
+                                    } 
+
                                 ?>
                             </tbody>
                         </table>
@@ -590,7 +602,8 @@
                         </thead>
                         <tbody>
                             <?php
-                                foreach($ranking as $rank) {
+                                // $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
+                                foreach($rangking as $rank) {
                                     // for($i=1; $i<5;$i++) {
                                     //     global $i;
                                     // }
