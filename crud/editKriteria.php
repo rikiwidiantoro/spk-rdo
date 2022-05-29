@@ -37,7 +37,7 @@
         $editKriteria = mysqli_query($koneksi, "UPDATE kriteria SET no_kriteria = '$noKriteria', nama_kriteria = '$namaKriteria', cost_benefit = '$costBenefit', bobot_kriteria = '$bobot' WHERE id_kriteria = '$id';");
 
         // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil di edit!'); document.location.href = '../index.php';</script>";
+        echo "<script>alert('Data Kriteria berhasil di edit!'); document.location.href = '../indexAdmin.php';</script>";
     }
 
 

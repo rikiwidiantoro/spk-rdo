@@ -23,7 +23,7 @@
         $tambahKriteria = mysqli_query($koneksi, "INSERT INTO `kriteria`(`id_kriteria`, `no_kriteria`, `nama_kriteria`, `cost_benefit`, `bobot_kriteria`) VALUES('', '$noKriteria', '$namaKriteria', '$costBenefit', '$bobot');");
 
         // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil ditambahkan!'); document.location.href = '../index.php';</script>";
+        echo "<script>alert('Data Kriteria berhasil ditambahkan!'); document.location.href = '../indexAdmin.php';</script>";
     }
 
 

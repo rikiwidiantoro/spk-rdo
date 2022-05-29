@@ -47,7 +47,7 @@
         $editKriteria = mysqli_query($koneksi, "UPDATE alternatif SET no_alternatif = '$noAlternatif', nama_produk = '$namaProduk', kriteria1 = '$kriteria1', kriteria2 = '$kriteria2', kriteria3 = '$kriteria3', kriteria4 = '$kriteria4', kriteria5 = '$kriteria5', kriteria6 = '$kriteria6', kriteria7 = '$kriteria7' WHERE id_alternatif = '$id';");
 
         // alert dan re direct
-        echo "<script>alert('Data Alternatif berhasil di edit!'); document.location.href = '../index.php';</script>";
+        echo "<script>alert('Data Alternatif berhasil di edit!'); document.location.href = '../indexAdmin.php';</script>";
     }
 
 

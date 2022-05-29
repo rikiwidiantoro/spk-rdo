@@ -13,14 +13,14 @@
         echo "
             <script>
                 alert('Data Alternatif berhasil dihapus!');
-                document.location.href = '../index.php';
+                document.location.href = '../indexAdmin.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data Alternatif gagal dihapus!');
-                document.location.href = '../index.php';
+                document.location.href = '../indexAdmin.php';
             </script>
         ";
     }
