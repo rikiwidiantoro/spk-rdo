@@ -16,19 +16,22 @@
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
     $converts = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
-    $conver = mysqli_query($koneksi, "SELECT id_alternatif as idd FROM convert_alternatif");
-    $w = mysqli_num_rows($alternatifs);
-    $ww = mysqli_num_rows($converts);
-    global $w;
-    global $ww;
-
     $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
     $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
     $ranking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
+    
+
+    // untuk pengkondisian tambah, update t.convert & t.rangking
     $r = mysqli_query($koneksi, "SELECT * FROM rangking");
+    $w = mysqli_num_rows($alternatifs);
+    $ww = mysqli_num_rows($converts);
+    global $w;
+    global $ww;
     $www = mysqli_num_rows($r);
     global $www;
+
+
     // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
     // $noa = mysqli_fetch_array($noo);
 
@@ -143,10 +146,14 @@
                                         // kriteria2 = total AUM = x2
                                         if( $alternatif['kriteria2'] > 1 ) {
                                             $x2 = 5;
-                                        } else if( $alternatif['kriteria2'] <= 1 ) {
+                                        } else if( $alternatif['kriteria2'] >= 0.50001 && $alternatif['kriteria2'] <= 1 ) {
                                             $x2 = 4;
-                                        } else {
+                                        } else if( $alternatif['kriteria2'] >= 0.20001 && $alternatif['kriteria2'] <= 0.500 ) {
                                             $x2 = 3;
+                                        } else if( $alternatif['kriteria2'] >= 0.050 && $alternatif['kriteria2'] <= 0.200 ) {
+                                            $x2 = 2;
+                                        } else if( $alternatif['kriteria2'] < 0.050 ) {
+                                            $x2 = 1;
                                         }
                 
                                         // kriteria3 = CAGR 1 tahun = x3
@@ -286,10 +293,14 @@
                                         // kriteria2 = total AUM = x2
                                         if( $alternatif['kriteria2'] > 1 ) {
                                             $x2 = 5;
-                                        } else if( $alternatif['kriteria2'] <= 1 ) {
+                                        } else if( $alternatif['kriteria2'] >= 0.50001 && $alternatif['kriteria2'] <= 1 ) {
                                             $x2 = 4;
-                                        } else {
+                                        } else if( $alternatif['kriteria2'] >= 0.20001 && $alternatif['kriteria2'] <= 0.500 ) {
                                             $x2 = 3;
+                                        } else if( $alternatif['kriteria2'] >= 0.050 && $alternatif['kriteria2'] <= 0.200 ) {
+                                            $x2 = 2;
+                                        } else if( $alternatif['kriteria2'] < 0.050 ) {
+                                            $x2 = 1;
                                         }
                 
                                         // kriteria3 = CAGR 1 tahun = x3
@@ -410,10 +421,14 @@
                                         // kriteria2 = total AUM = x2
                                         if( $alternatif['kriteria2'] > 1 ) {
                                             $x2 = 5;
-                                        } else if( $alternatif['kriteria2'] <= 1 ) {
+                                        } else if( $alternatif['kriteria2'] >= 0.50001 && $alternatif['kriteria2'] <= 1 ) {
                                             $x2 = 4;
-                                        } else {
+                                        } else if( $alternatif['kriteria2'] >= 0.20001 && $alternatif['kriteria2'] <= 0.500 ) {
                                             $x2 = 3;
+                                        } else if( $alternatif['kriteria2'] >= 0.050 && $alternatif['kriteria2'] <= 0.200 ) {
+                                            $x2 = 2;
+                                        } else if( $alternatif['kriteria2'] < 0.050 ) {
+                                            $x2 = 1;
                                         }
                 
                                         // kriteria3 = CAGR 1 tahun = x3
@@ -555,6 +570,11 @@
     <!-- rangking -->
     <div class="hasil-rangking">
         <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">print</i>Cetak Hasil</a>
+                </div>
+            </div>
             <div class="row">
                 <div class="col m12">
                     <table>
