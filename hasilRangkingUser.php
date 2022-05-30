@@ -43,10 +43,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- css sendiri -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
         footer {
-            height: 70px;
-            line-height: 70px;
+            margin-top: 20px;
+            padding: 20px 80px;
+        }
+        .footer-copyright {
+            padding: 10px 85px;
+            text-align: center;
         }
     </style>
 </head>
@@ -246,10 +251,33 @@
 
 
     <!-- footer -->
-    <br><br>
-    <footer class="grey darken-2 white-text center">
-        <p>&copy; Riki Widiantoro</p>
+    <footer class="grey darken-2 white-text">
+        <div class="row">
+            <div class="col s8">
+                <h6>Riki Widiantoro | Teknik Informatika</h6>
+                <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
+                <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->
+            </div>
+            <div class="col s2 offset-s1">
+                <h6>Kontak Developer :</h6>
+                <div class="sosmed">
+                    <p>
+                        <a href="mailto:rikitoro12@gmail.com?subject=subject text" target="_blank" class="white-text"><i class="fa fa-envelope"></i> rikitoro12@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/rikiwidiantoro" target="_blank" class="white-text"><i class="fab fa-github"></i> rikiwidiantoro </a>
+                    </p>
+                    <p>
+                        <a href="https://rikiwidiantoro.github.io/" target="_blank" class="white-text"><i class="fas fa-blog"></i> rikiwidiantoro.github.io</a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
     </footer>
+    <div class="footer-copyright grey darken-1 white-text">
+        &copy; 2022 | SKRIPSI
+    </div>
     <!-- footer -->
 
     <!--JavaScript at end of body for optimized loading-->

@@ -50,12 +50,17 @@
         .con {
             padding: 2% 4%;
         }
-        .alternatif .pesan-update {
+        .pesan-update {
             font-style: italic;
             font-size: 13px;
         }
         footer {
-            padding: 20px 80px
+            margin-top: 20px;
+            padding: 20px 80px;
+        }
+        .footer-copyright {
+            padding: 10px 85px;
+            text-align: center;
         }
     </style>
 </head>
@@ -175,8 +180,8 @@
                                     echo "
                                     <tr>
                                         <td class='center'>". $alternatif['no_alternatif'] ."</td>
-                                        <td>". $alternatif['nama_produk'] ."</td>
-                                        <td>". $alternatif['kriteria1'] ."</td>
+                                        <td style='width:300px;'>". $alternatif['nama_produk'] ."</td>
+                                        <td style='width:250px;'>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
@@ -207,8 +212,8 @@
         <div class="row">
             <div class="col s8">
                 <h6>Riki Widiantoro | Teknik Informatika</h6>
-                <p>Website Sistem Pendukung Keputusan Rekomendasi Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
-                <h6>&copy; 2022 | SKRIPSI</h6>
+                <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
+                <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->
             </div>
             <div class="col s2 offset-s1">
                 <h6>Kontak Developer :</h6>
@@ -227,6 +232,9 @@
             </div>
         </div>
     </footer>
+    <div class="footer-copyright grey darken-1 white-text">
+        &copy; 2022 | SKRIPSI
+    </div>
     <!-- footer -->
 
 

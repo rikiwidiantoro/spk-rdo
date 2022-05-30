@@ -67,10 +67,19 @@
     <title>Hasil Perangkingan</title>
 
     <!-- css sendiri -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
+        .pesan-update {
+            font-style: italic;
+            font-size: 13px;
+        }
         footer {
-            height: 70px;
-            line-height: 70px;
+            margin-top: 100px;
+            padding: 20px 80px;
+        }
+        .footer-copyright {
+            padding: 10px 85px;
+            text-align: center;
         }
         .tanggal {
             display: none;
@@ -106,7 +115,7 @@
     <!-- navbar -->
 
     <!-- tombol lihat hasil -->
-    <br><br>
+    <br><br><br>
     <div class="lihat-saw">
         <div class="container">
             <div class="row">
@@ -582,7 +591,7 @@
     
 
     <!-- tombol lihat hasil -->
-    <br><br>
+    <br><br><br>
     <div class="lihat-hasil">
         <div class="container">
             <div class="row">
@@ -599,7 +608,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a href="laporan/cetak.php" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
+                    <a href="laporan/cetak.php" target="_blank" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
                     <div class="tanggal">
                         <p>Tanggal Update Data : 20 Mei 2022</p>
                         <p>Tanggal Download : <?= date('d F Y') ?></p>
@@ -647,16 +656,40 @@
                     </table>
                 </div>
             </div>
+            <span class="pesan-update">*Data diperbaharui terakhir tanggal 20 Mei 2022</span>
         </div>
     </div>
     <!-- rangking -->
 
 
     <!-- footer -->
-    <br><br>
-    <footer class="grey darken-2 white-text center">
-        <p>&copy; Riki Widiantoro</p>
+    <footer class="grey darken-2 white-text">
+        <div class="row">
+            <div class="col s8">
+                <h6>Riki Widiantoro | Teknik Informatika</h6>
+                <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
+                <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->
+            </div>
+            <div class="col s2 offset-s1">
+                <h6>Kontak Developer :</h6>
+                <div class="sosmed">
+                    <p>
+                        <a href="mailto:rikitoro12@gmail.com?subject=subject text" target="_blank" class="white-text"><i class="fa fa-envelope"></i> rikitoro12@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/rikiwidiantoro" target="_blank" class="white-text"><i class="fab fa-github"></i> rikiwidiantoro </a>
+                    </p>
+                    <p>
+                        <a href="https://rikiwidiantoro.github.io/" target="_blank" class="white-text"><i class="fas fa-blog"></i> rikiwidiantoro.github.io</a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
     </footer>
+    <div class="footer-copyright grey darken-1 white-text">
+        &copy; 2022 | SKRIPSI
+    </div>
     <!-- footer -->
 
     <!--JavaScript at end of body for optimized loading-->
