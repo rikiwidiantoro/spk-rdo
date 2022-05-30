@@ -72,6 +72,20 @@
             height: 70px;
             line-height: 70px;
         }
+        .tanggal {
+            display: none;
+            font-size: 10px;
+            line-height: 10px;
+            margin-bottom: -20px;
+        }
+        @media print {
+            .navbar-fixed, .lihat-saw, .tabel-perhitungan, .lihat-hasil, footer, .cetak {
+                display: none;
+            }
+            .tanggal {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -242,9 +256,10 @@
                                         if($w == $ww) {
                                             // echo '1';
                                             $updateTabelConvert = mysqli_query($koneksi, "UPDATE convert_alternatif SET kriteria1 = '$x1', kriteria2 = '$x2', kriteria3 = '$x3', kriteria4 = '$x4', kriteria5 = '$x5', kriteria6 = '$x6', kriteria7 = '$x7' WHERE no_alternatif = '$iii';");
-                                        } else if($w < $ww) {
-                                            $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
-                                        }
+                                        } 
+                                        // else if($w < $ww) {
+                                        //     $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
+                                        // }
                                     }
                                     if($w > $ww) {
                                         $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `no_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7');");
@@ -584,7 +599,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">print</i>Cetak Hasil</a>
+                    <a href="laporan/cetak.php" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
+                    <div class="tanggal">
+                        <p>Tanggal Update Data : 20 Mei 2022</p>
+                        <p>Tanggal Download : <?= date('d F Y') ?></p>
+                    </div>
                 </div>
             </div>
             <div class="row">
