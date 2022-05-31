@@ -1,3 +1,43 @@
+<?php
+
+    include_once('koneksi.php');
+
+    // if( isset($_POST['submit']) ) {
+    //     // mengambil data dari form
+    //     $nama = $_POST['nama'];
+    //     $username = $_POST['username'];
+    //     $password = $_POST['password'];
+    //     $konfirmasiPassword = $_POST['konfirmasiPassword'];
+    //     echo $nama. '<br>';
+    //     echo $username. '<br>';
+    //     echo $password. '<br>';
+    //     echo $konfirmasiPassword. '<br>';
+
+    // }
+
+    
+    function registrasi($data) {
+        // Fungsi stripslashes pada php adalah untuk menghapus atau menghilangkan karakter backslashes tanda garis miring terbalik ("\") menggunakan stripslashes() sehingga tidak mengganggu query mysql yang dikirim.
+        $nama = stripslashes($data['nama']);
+        $username = stripslashes($data['username']);
+
+        echo $nama . '<br>';
+        echo $username . '<br>';
+
+    }
+
+    if( isset($_POST['registrasi']) ) {
+        if( registrasi($_POST) > 0 ) {
+            echo "
+                alert('Akun Anda berhasil terdaftar!');
+            ";
+        } else {
+            mysqli_error($koneksi);
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,7 +102,7 @@
                         </tr>
                     </table>
                     <br>
-                    <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="submit">Daftar
+                    <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="registrasi">Daftar
                         <i class="material-icons right">send</i>
                     </button>
                 </form>

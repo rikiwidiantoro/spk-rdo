@@ -233,7 +233,7 @@
             // popup untuk ucapan selamat datang
             let namaUser = prompt('Ketikan nama Anda!');
             $('.ucapanSelamat h4 span').html(namaUser);
-
+            
         });
     </script>
 
