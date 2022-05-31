@@ -1,35 +1,3 @@
-<?php
-
-    // session
-    session_start();
-
-    if( !isset($_SESSION['login']) ) {
-        header("Location: ../login.php");
-        exit;
-    }
-    // session
-
-    include_once('../koneksi.php');
-
-    // mengambil data dari form
-    if( isset($_POST['submit']) ) {
-        $noKriteria = $_POST['noKriteria'];
-        $namaKriteria = $_POST['namaKriteria'];
-        $costBenefit = $_POST['costBenefit'];
-        $bobot = $_POST['bobot'];
-
-
-        // mengirim data ke database
-        $tambahKriteria = mysqli_query($koneksi, "INSERT INTO `kriteria`(`id_kriteria`, `no_kriteria`, `nama_kriteria`, `cost_benefit`, `bobot_kriteria`) VALUES('', '$noKriteria', '$namaKriteria', '$costBenefit', '$bobot');");
-
-        // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil ditambahkan!'); document.location.href = '../indexAdmin.php';</script>";
-    }
-
-
-?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +9,13 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Tambah Data Kriteria</title>
+        <title>Tambah Data Alternatif</title>
+
+        <style>
+            td input {
+                margin-right: 100px !important;
+            }
+        </style>
     </head>
 
     <body>
@@ -50,7 +24,7 @@
         <div class="navbar-fixed">
             <nav class="grey darken-2">
                 <div class="nav-wrapper container">
-                    <a href="../indexAdmin.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
+                    <a href="login.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
                     <a href="#" class="brand-logo center">SPK Reksa Dana Obligasi</a>
                 </div>
             </nav>
@@ -62,7 +36,7 @@
         <br>
         <div class="row center">
             <div class="col s4 offset-s4">
-                <h4>Tambah Kriteria</h4>
+                <h5>Masukan data diri Anda dibawah!</h5>
                 <hr>
             </div>
         </div>
@@ -71,30 +45,31 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <table>
                         <tr>
-                            <td>Nomor Kriteria</td>
-                            <td><input type="text" name="noKriteria" autocomplete="off"></td>
+                            <td>Nama Lengkap</td>
+                            <td><input type="text" name="nama" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Nama Kriteria</td>
-                            <td><input type="text" name="namaKriteria" autocomplete="off"></td>
+                            <td>Username</td>
+                            <td><input type="text" name="username" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Cost/Benefit</td>
-                            <td><input type="text" name="costBenefit" autocomplete="off"></td>
+                            <td>Password</td>
+                            <td><input type="password" name="password" autocomplete="off"></td>
                         </tr>
                         <tr>
-                            <td>Bobot</td>
-                            <td><input type="text" name="bobot" autocomplete="off"></td>
+                            <td>Konfirmasi Password</td>
+                            <td><input type="password" name="konfirmasiPassword" autocomplete="off"></td>
                         </tr>
                     </table>
                     <br>
-                    <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="submit">Tambah Data
+                    <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="submit">Daftar
                         <i class="material-icons right">send</i>
                     </button>
                 </form>
             </div>
         </div>
         <!-- form -->
+        <br><br>
 
 
         <!--JavaScript at end of body for optimized loading-->
