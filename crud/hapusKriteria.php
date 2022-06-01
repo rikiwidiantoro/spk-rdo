@@ -13,14 +13,14 @@
         echo "
             <script>
                 alert('Data Kriteria berhasil dihapus!');
-                document.location.href = '../indexAdmin.php';
+                document.location.href = '../admin/indexAdmin.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data Kriteria gagal dihapus!');
-                document.location.href = '../indexAdmin.php';
+                document.location.href = '../admin/indexAdmin.php';
             </script>
         ";
     }

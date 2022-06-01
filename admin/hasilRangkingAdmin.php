@@ -272,8 +272,10 @@
                                     }
                                     if($w > $ww) {
                                         $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `no_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7');");
-                                    } 
-                                ?>
+                                    } else if($w < $ww) {
+                                        $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
+                                    }
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -575,9 +577,14 @@
                                     }
                                     if($w > $www) {
                                         $tambahDataNilaiPreferensi = mysqli_query($koneksi, "INSERT INTO `rangking`(`id_rank`, `no_alternatif`, `nama_produk`, `kriteria1`, `nilai_preferensi`) VALUES('', '$no_al', '$namaProduk', '$kriteria1', '$nilaiPreferensi');");
-                                        
-                                    } 
-
+                                    } else if($w < $www) {
+                                        $hapusDataNilaiPreferensi = mysqli_query($koneksi, "DELETE FROM rangking WHERE no_alternatif = '$no_al'");
+                                        // echo $w;
+                                        // echo '==';
+                                        // echo $www;
+                                        // echo '===';
+                                        // echo $no_al;
+                                    }
                                 ?>
                             </tbody>
                         </table>
@@ -608,7 +615,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a href="laporan/cetak.php" target="_blank" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
+                    <a href="../laporan/cetak.php" target="_blank" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
                     <div class="tanggal">
                         <p>Tanggal Update Data : 20 Mei 2022</p>
                         <p>Tanggal Download : <?= date('d F Y') ?></p>

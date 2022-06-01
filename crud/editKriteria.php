@@ -4,7 +4,7 @@
     session_start();
 
     if( !isset($_SESSION['login']) ) {
-        header("Location: ../login.php");
+        header("Location: ../index.php");
         exit;
     }
     // session
@@ -37,7 +37,7 @@
         $editKriteria = mysqli_query($koneksi, "UPDATE kriteria SET no_kriteria = '$noKriteria', nama_kriteria = '$namaKriteria', cost_benefit = '$costBenefit', bobot_kriteria = '$bobot' WHERE id_kriteria = '$id';");
 
         // alert dan re direct
-        echo "<script>alert('Data Kriteria berhasil di edit!'); document.location.href = '../indexAdmin.php';</script>";
+        echo "<script>alert('Data Kriteria berhasil di edit!'); document.location.href = '../admin/indexAdmin.php';</script>";
     }
 
 
@@ -64,7 +64,7 @@
         <div class="navbar-fixed">
             <nav class="grey darken-2">
                 <div class="nav-wrapper container">
-                    <a href="../indexAdmin.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
+                    <a href="../admin/indexAdmin.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
                     <a href="#" class="brand-logo center">SPK Reksa Dana Obligasi</a>
                 </div>
             </nav>
