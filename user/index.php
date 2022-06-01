@@ -1,16 +1,16 @@
+<!-- koneksi -->
 <?php
 
     // session
     session_start();
 
     if( !isset($_SESSION['login']) ) {
-        header("Location: login.php");
+        header("Location: ../index.php");
         exit;
     }
     // session
 
-    // koneksi
-    include_once('koneksi.php');
+    include_once('../koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
@@ -48,11 +48,7 @@
             font-size: 11px;
         }
         .con {
-            padding: 2% 4%;
-        }
-        .pesan-update {
-            font-style: italic;
-            font-size: 13px;
+            padding: 2% 5%;
         }
         footer {
             margin-top: 20px;
@@ -72,9 +68,9 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="indexAdmin.php">dasboard</a></li>
-                    <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="index.php">dasboard</a></li>
+                    <li><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
+                    <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -84,9 +80,9 @@
 
     <!-- welcome -->
     <br>
-    <div class="row container">
+    <div class="row container ucapanSelamat">
         <div class="col">
-            <h4>Selamat Datang, Admin!</h3>
+            <h4>Selamat Datang, <span>User</span>!</h3>
             <hr>
         </div>
     </div>
@@ -101,9 +97,6 @@
                 <div class="col m9">
                     <h5>Tabel Kriteria</h5>
                 </div>
-                <div class="col m3">
-                    <a href="crud/tambahKriteria.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">add</i>Tambah Kriteria</a>
-                </div>
             </div>
             <div class="row">
                 <div class="col m12">
@@ -114,7 +107,6 @@
                                 <th>Nama Kriteria</th>
                                 <th>Cost/Benefit</th>
                                 <th>Bobot</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -126,10 +118,6 @@
                                         <td>". $kriteria['nama_kriteria'] ."</td>
                                         <td class='center'>". $kriteria['cost_benefit'] ."</td>
                                         <td class='center'>". $kriteria['bobot_kriteria']."</td>
-                                        <td class='center'>
-                                            <a href='crud/editKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='crud/hapusKriteria.php?id=".$kriteria['id_kriteria']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
-                                        </td>
                                     </tr>
                                     
                                     ";
@@ -152,9 +140,6 @@
                 <div class="col m9">
                     <h5>Tabel Alternatif</h5>
                 </div>
-                <div class="col m3">
-                    <a href="crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
-                </div>
             </div>
             <div class="row">
                 <div class="col m12">
@@ -171,7 +156,6 @@
                                         ";
                                     }
                                 ?>
-                                <th style="width: 15%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -180,18 +164,14 @@
                                     echo "
                                     <tr>
                                         <td class='center'>". $alternatif['no_alternatif'] ."</td>
-                                        <td style='width:300px;'>". $alternatif['nama_produk'] ."</td>
-                                        <td style='width:250px;'>". $alternatif['kriteria1'] ."</td>
+                                        <td>". $alternatif['nama_produk'] ."</td>
+                                        <td>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td class='right'>Rp ". $alternatif['kriteria6']."</td>
                                         <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
-                                        <td class='center'>
-                                            <a href='crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
-                                            <a href='crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
-                                        </td>
                                     </tr>
                                     
                                     ";
@@ -201,7 +181,6 @@
                     </table>
                 </div>
             </div>
-            <span class="pesan-update">*Data diperbaharui terakhir tanggal 20 Mei 2022</span>
         </div>
     </div>
     <!-- tabel alternatif -->
@@ -243,6 +222,20 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // window.addEventListener('load', function() {
+        //     let namaUser = prompt('Ketikan nama Anda!');
+        //     console.log(namaUser);
+            
+        // });
+        $(document).ready(function() {
+
+            // popup untuk ucapan selamat datang
+            let namaUser = prompt('Ketikan nama Anda!');
+            $('.ucapanSelamat h4 span').html(namaUser);
+            
+        });
+    </script>
 
 </body>
 </html>

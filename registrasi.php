@@ -64,7 +64,7 @@
         <div class="navbar-fixed">
             <nav class="grey darken-2">
                 <div class="nav-wrapper container">
-                    <a href="login.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
+                    <a href="index.php"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
                     <a href="#" class="brand-logo center">SPK Reksa Dana Obligasi</a>
                 </div>
             </nav>
