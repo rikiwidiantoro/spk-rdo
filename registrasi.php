@@ -18,7 +18,7 @@
     
     function registrasi($data) {
         // Fungsi stripslashes pada php adalah untuk menghapus atau menghilangkan karakter backslashes tanda garis miring terbalik ("\") menggunakan stripslashes() sehingga tidak mengganggu query mysql yang dikirim.
-        $nama = stripslashes($data['nama']);
+        $nama = strtolower(stripslashes($data['nama']));
         $username = stripslashes($data['username']);
 
         echo $nama . '<br>';

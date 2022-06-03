@@ -246,7 +246,7 @@
                 
                                         echo "
                                             <tr>
-                                                <td>". $alternatif['no_alternatif'] ."</td>
+                                                <td><b>". $alternatif['no_alternatif'] ."</b></td>
                                                 <td>". $alternatif['kriteria1'] ."</td>
                                                 <td>". $x1 ."</td>
                                                 <td>". $x2 ."</td>
@@ -259,6 +259,7 @@
                                         ";
 
                                         $iii = $alternatif['no_alternatif']; //id alternatif tabel alternatif
+                                        // global $iii;
                                         // while($d = mysqli_fetch_array($conver)) { // id alternatif tabel convert alternatif
                                         //     // echo $d['idd'];
                                         // };
@@ -266,12 +267,16 @@
                                             // echo '1';
                                             $updateTabelConvert = mysqli_query($koneksi, "UPDATE convert_alternatif SET kriteria1 = '$x1', kriteria2 = '$x2', kriteria3 = '$x3', kriteria4 = '$x4', kriteria5 = '$x5', kriteria6 = '$x6', kriteria7 = '$x7' WHERE no_alternatif = '$iii';");
                                         } 
+                                        // else if($w > $ww) {
+                                        //     $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `no_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7') WHERE no_alternatif = '$iii';");
+                                        // }
                                         // else if($w < $ww) {
                                         //     $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
                                         // }
                                     }
                                     if($w > $ww) {
                                         $tambahDataTabelConvert = mysqli_query($koneksi, "INSERT INTO `convert_alternatif`(`id_matrik_x`, `no_alternatif`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$iii', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7');");
+                                        //  WHERE no_alternatif = '$iii'
                                     } else if($w < $ww) {
                                         $hapusDataTabelConvert = mysqli_query($koneksi, "DELETE FROM convert_alternatif WHERE no_alternatif = '$iii'");
                                     }
@@ -577,6 +582,7 @@
                                     }
                                     if($w > $www) {
                                         $tambahDataNilaiPreferensi = mysqli_query($koneksi, "INSERT INTO `rangking`(`id_rank`, `no_alternatif`, `nama_produk`, `kriteria1`, `nilai_preferensi`) VALUES('', '$no_al', '$namaProduk', '$kriteria1', '$nilaiPreferensi');");
+                                        //  WHERE no_alternatif = '$no_al'
                                     } else if($w < $www) {
                                         $hapusDataNilaiPreferensi = mysqli_query($koneksi, "DELETE FROM rangking WHERE no_alternatif = '$no_al'");
                                         // echo $w;
@@ -603,11 +609,12 @@
         <div class="container">
             <div class="row">
                 <div class="col m12 center">
-                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">keyboard_arrow_down</i><span>Lihat</span> Hasil</a>
+                    <a class="waves-effect waves-light btn-small grey darken-1 tambah-kriteria"><i class="material-icons left">keyboard_arrow_down</i><span>Lihat</span> Semua Hasil</a>
                 </div>
             </div>
         </div>
     </div>
+    <br>
     <!-- tombol lihat hasil -->
 
     <!-- rangking -->
@@ -694,7 +701,7 @@
             </div>
         </div>
     </footer>
-    <div class="footer-copyright grey darken-1 white-text">
+    <div class="footer-copyright grey darken-3 white-text">
         &copy; 2022 | SKRIPSI
     </div>
     <!-- footer -->
@@ -719,24 +726,26 @@
                 $('.tabel-perhitungan .nilaiPreferensi').fadeToggle(3000);
 
                 // masih belum bisa
-                if(true) {
-                    $('.lihat-saw span').html("Sembunyikan");
-                } else if(true){
-                    $('.lihat-saw span').html("Lihat");
-                } else {
-                    $('.lihat-saw span').html("Sembunyikan");
+                // if(true) {
+                //     $('.lihat-saw span').html("Sembunyikan");
+                // } else if(true){
+                //     $('.lihat-saw span').html("Lihat");
+                // } else {
+                //     $('.lihat-saw span').html("Sembunyikan");
 
-                }
+                // }
+                $('.lihat-saw span').fadeToggle(1000);
             });
             $('.lihat-hasil').click(function() {
                 $('.hasil-rangking').fadeToggle(2000);
 
                 // masih belum bisa
-                if(true) {
-                    $('.lihat-hasil span').html("Sembunyikan");
-                } else {
-                    $('.lihat-hasil span').html("Lihat");
-                }
+                // if(true) {
+                //     $('.lihat-hasil span').html("Sembunyikan");
+                // } else {
+                //     $('.lihat-hasil span').html("Lihat");
+                // }
+                $('.lihat-hasil span').fadeToggle(1000);
             });
         })
     </script>

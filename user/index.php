@@ -13,7 +13,7 @@
     include_once('../koneksi.php');
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
-    $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
+    $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY no_alternatif ASC");
 
 
 ?>
@@ -211,7 +211,7 @@
             </div>
         </div>
     </footer>
-    <div class="footer-copyright grey darken-1 white-text">
+    <div class="footer-copyright grey darken-3 white-text">
         &copy; 2022 | SKRIPSI
     </div>
     <!-- footer -->
