@@ -11,11 +11,20 @@
     // session
 
     include_once('../koneksi.php');
+    
 
     $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY no_alternatif ASC");
 
-
+    // query untuk greeting atau ucapan selamat datang di dasboard
+    $ucapan = mysqli_query($koneksi, "SELECT * FROM login WHERE username != 'admin'");
+    // foreach($ucapan as $nama) {
+    //     var_dump($nama['nama']);
+    // }
+    // var_dump($namaUser);
+    // nama();
+    // echo $namaUser;
+    
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +58,10 @@
         }
         .con {
             padding: 2% 5%;
+        }
+        .pesan-update {
+            font-style: italic;
+            font-size: 13px;
         }
         footer {
             margin-top: 20px;
@@ -181,6 +194,7 @@
                     </table>
                 </div>
             </div>
+            <span class="pesan-update">*Data diperbaharui terakhir tanggal 20 Mei 2022</span>
         </div>
     </div>
     <!-- tabel alternatif -->
@@ -231,8 +245,8 @@
         $(document).ready(function() {
 
             // popup untuk ucapan selamat datang
-            let namaUser = prompt('Ketikan nama Anda!');
-            $('.ucapanSelamat h4 span').html(namaUser);
+            // let namaUser = prompt('Ketikan nama Anda!');
+            // $('.ucapanSelamat h4 span').html(namaUser);
             
         });
     </script>

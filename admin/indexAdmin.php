@@ -16,6 +16,9 @@
     // $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY no_alternatif ASC");
 
+    // query untuk greeting atau ucapan selamat datang di dasboard
+    $ucapan = mysqli_query($koneksi, "SELECT * FROM login WHERE username = 'admin'");
+    
 
 ?>
 
@@ -87,7 +90,11 @@
     <br>
     <div class="row container">
         <div class="col">
-            <h4>Selamat Datang, Admin!</h3>
+            <h4>Selamat Datang, <?php 
+                foreach($ucapan as $nama) {
+                    echo $nama['nama'];
+                }
+            ?>!</h3>
             <hr>
         </div>
     </div>

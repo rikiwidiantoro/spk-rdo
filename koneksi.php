@@ -7,4 +7,7 @@
 
     $koneksi = mysqli_connect($localhost, $username, $password, $db_name);
 
+
+    // include_once('index.php');
+
 ?>

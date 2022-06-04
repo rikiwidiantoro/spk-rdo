@@ -45,10 +45,19 @@
                     header('Location: user/index.php');
                     exit;
                 }
+                
 
             } else {
                 echo "<script>alert('username atau password yang Anda masukkan salah!')</script>";
             }
+
+            // $namas = $row['username'];
+            // function nama($nama) {
+            //     return $nama;
+            // }
+
+            // $namaUser = nama($namas);
+            
 
 
             // if( password_verify($password, $row['password']) ) {
@@ -63,6 +72,8 @@
             // }
         }
     }
+    // echo $namaUser;
+
 
     $pass = password_hash('admin1234', PASSWORD_DEFAULT);
     $passss = password_hash('rikiwidiantoro', PASSWORD_DEFAULT);

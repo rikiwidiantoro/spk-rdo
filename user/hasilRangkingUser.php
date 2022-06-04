@@ -133,14 +133,14 @@
                             <?php
                                 // $raking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC && ORDER BY nilai_preferensi LIMIT 5");
                                 foreach($raking as $rank) {
-                                    $i++;
+                                    $j++;
                                     echo "
                                         <tr>
                                             <td><b>". $rank['no_alternatif'] ."</b></td>
                                             <td>". $rank['nama_produk'] ."</td>
                                             <td>". $rank['kriteria1'] ."</td>
                                             <td>". $rank['nilai_preferensi'] ."</td>
-                                            <td>". $i ."</td>
+                                            <td>". $j ."</td>
                                         </tr>
                                     ";
                                 }

@@ -17,19 +17,50 @@
 
     
     function registrasi($data) {
+        global $koneksi;
         // Fungsi stripslashes pada php adalah untuk menghapus atau menghilangkan karakter backslashes tanda garis miring terbalik ("\") menggunakan stripslashes() sehingga tidak mengganggu query mysql yang dikirim.
         $nama = strtolower(stripslashes($data['nama']));
-        $username = stripslashes($data['username']);
+        $username = strtolower(stripslashes($data['username']));
+        // fungsi mysqli_real_escape_string untuk memberi backslash di beberapa kode untuk ditampilkan pada halaman, namun saat menyimpan menuju sql, kode akan tetap normal tanpa ada backslash.
+        // atau memungkinkan user memasukkan password ada tanda kutip nya
+        $password = mysqli_real_escape_string($koneksi, $data['password']);
+        $konfirmasiPassword = mysqli_real_escape_string($koneksi, $data['konfirmasiPassword']);
 
-        echo $nama . '<br>';
-        echo $username . '<br>';
+        // cek username sudah ada atau belum
+        $dataLogin = mysqli_query($koneksi, "SELECT username FROM login WHERE username = '$username'");
+        if(mysqli_fetch_assoc($dataLogin)) {
+            echo "
+                <script>
+                    alert('username sudah terdaftar!');
+                </script>
+            ";
+            return false;
+        }
+
+        // cek konfirmasi password
+        if($password !== $konfirmasiPassword) {
+            echo "
+                <script>
+                    alert('konfirmasi password tidak sesuai!');
+                </script>
+            ";
+            return false;
+        }
+
+        // enkripsi password
+        $password = password_hash($konfirmasiPassword, PASSWORD_DEFAULT);
+
+        // menambahkan user baru ke database
+        mysqli_query($koneksi, "INSERT INTO login VALUES('', '$nama', '$username', '$password')");
+
+        return mysqli_affected_rows($koneksi);
 
     }
 
     if( isset($_POST['registrasi']) ) {
         if( registrasi($_POST) > 0 ) {
             echo "
-                alert('Akun Anda berhasil terdaftar!');
+                alert('Akun Anda berhasil didaftarkan!');
             ";
         } else {
             mysqli_error($koneksi);
@@ -49,7 +80,7 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Tambah Data Alternatif</title>
+        <title>Registrasi Pengunjung</title>
 
         <style>
             td input {
