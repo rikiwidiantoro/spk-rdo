@@ -32,7 +32,7 @@
 
 
     $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
-    $raking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC LIMIT 2");
+    $raking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC LIMIT 5");
     // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
     // $noa = mysqli_fetch_array($noo);
 
@@ -73,7 +73,7 @@
         }
         footer {
             margin-top: 100px;
-            padding: 20px 80px;
+            padding: 20px 100px;
         }
         .footer-copyright {
             padding: 10px 85px;
@@ -230,7 +230,7 @@
     <!-- footer -->
     <footer class="grey darken-2 white-text">
         <div class="row">
-            <div class="col s8">
+            <div class="col s7 offset-s1">
                 <h6>Riki Widiantoro | Teknik Informatika</h6>
                 <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
                 <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->

@@ -31,7 +31,7 @@
         if(mysqli_fetch_assoc($dataLogin)) {
             echo "
                 <script>
-                    alert('username sudah terdaftar!');
+                    alert('username sudah terdaftar sebelumnya!');
                 </script>
             ";
             return false;
@@ -60,7 +60,9 @@
     if( isset($_POST['registrasi']) ) {
         if( registrasi($_POST) > 0 ) {
             echo "
-                alert('Akun Anda berhasil didaftarkan!');
+                <script>
+                    alert('Akun Anda berhasil didaftarkan!');
+                </script>
             ";
         } else {
             mysqli_error($koneksi);

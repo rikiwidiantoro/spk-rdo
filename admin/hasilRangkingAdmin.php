@@ -75,25 +75,11 @@
         }
         footer {
             margin-top: 100px;
-            padding: 20px 80px;
+            padding: 20px 100px;
         }
         .footer-copyright {
             padding: 10px 85px;
             text-align: center;
-        }
-        .tanggal {
-            display: none;
-            font-size: 10px;
-            line-height: 10px;
-            margin-bottom: -20px;
-        }
-        @media print {
-            .navbar-fixed, .lihat-saw, .tabel-perhitungan, .lihat-hasil, footer, .cetak {
-                display: none;
-            }
-            .tanggal {
-                display: block;
-            }
         }
     </style>
 </head>
@@ -565,8 +551,8 @@
                                                 <td>". $nilaiPreferensi ."</td>
                                             </tr>
                                         ";
-                                        echo $nilaiPreferensi;
-                                        echo '<br>';
+                                        // echo $nilaiPreferensi;
+                                        // echo '<br>';
                                         if($w == $www) {
                                             // echo '1';
                                             $updateNilaiPreferensi = mysqli_query($koneksi, "UPDATE rangking SET nilai_preferensi = '$nilaiPreferensi' WHERE no_alternatif = '$no_al';");
@@ -623,10 +609,6 @@
             <div class="row">
                 <div class="col">
                     <a href="../laporan/cetak.php" target="_blank" class="waves-effect waves-light btn-small grey darken-1 cetak"><i class="material-icons left">print</i>Cetak Hasil</a>
-                    <div class="tanggal">
-                        <p>Tanggal Update Data : 20 Mei 2022</p>
-                        <p>Tanggal Download : <?= date('d F Y') ?></p>
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -679,7 +661,7 @@
     <!-- footer -->
     <footer class="grey darken-2 white-text">
         <div class="row">
-            <div class="col s8">
+            <div class="col s7 offset-s1">
                 <h6>Riki Widiantoro | Teknik Informatika</h6>
                 <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
                 <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->

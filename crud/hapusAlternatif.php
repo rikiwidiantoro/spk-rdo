@@ -10,12 +10,14 @@
 
     // alert jika berhasil dihapus maka akan re direct ke halaman dasboard
     if( $hapusAlternatif > 0 ) {
+    
         echo "
             <script>
                 alert('Data Alternatif berhasil dihapus!');
                 document.location.href = '../admin/indexAdmin.php';
             </script>
         ";
+    
     } else {
         echo "
             <script>
