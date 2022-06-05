@@ -9,20 +9,21 @@
 
     require('fpdf.php');
     $pdf = new FPDF('P','mm','A4');
+    $pdf->SetMargins(25,10); 
 
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',14);
-    $pdf->Cell(190,20,'DAFTAR HASIL PERANGKINGAN REKSADANA OBLIGASI',0,1,'C');
+    $pdf->Cell(160,20,'DAFTAR HASIL PERANGKINGAN REKSA DANA OBLIGASI',0,1,'C');
+    
     
     $pdf->SetFont('Arial','I',10);
     $pdf->Cell(60,7,'Tanggal update data : '.$tglUpdate,0,1);
     $pdf->Cell(60,7,'Tanggal download : '.$tglDownload,0,1);
-    $pdf->Cell(60,7,'',0,1);
-
+    $pdf->Cell(60,7,'',0,1);; 
 
     $pdf->SetFont('Arial','B',10);
     $pdf->Cell(20,10,'Alternatif',1,0,'C');
-    $pdf->Cell(120,10,'Nama Produk',1,0,'C');
+    $pdf->Cell(90,10,'Nama Produk',1,0,'C');
     $pdf->Cell(30,10,'Nilai Preferensi',1,0,'C');
     $pdf->Cell(20,10,'Rangking',1,1,'C');
 
@@ -34,7 +35,7 @@
     while($data = mysqli_fetch_array($rangking)) {
         
         $pdf->Cell(20,10,$data['no_alternatif'],1,0,'C');
-        $pdf->Cell(120,10,$data['nama_produk'],1,0);
+        $pdf->Cell(90,10,$data['nama_produk'],1,0);
         $pdf->Cell(30,10,$data['nilai_preferensi'],1,0,'C');
         $pdf->Cell(20,10,$i+=1,1,1,'C');
     }
