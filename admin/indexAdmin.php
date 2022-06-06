@@ -157,10 +157,13 @@
     <div id="alternatif" class="alternatif">
         <div class="con">
             <div class="row">
-                <div class="col m9">
+                <div class="col m8">
                     <h5>Tabel Alternatif</h5>
                 </div>
-                <div class="col m3">
+                <div class="col m2">
+                    <a href="../laporan/cetakAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif" target="_blank"><i class="material-icons left">print</i>Cetak Alternatif</a>
+                </div>
+                <div class="col m2">
                     <a href="../crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Alternatif</a>
                 </div>
             </div>
