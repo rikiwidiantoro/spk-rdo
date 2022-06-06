@@ -183,8 +183,8 @@
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
-                                        <td class='right'>Rp ". $alternatif['kriteria6']."</td>
-                                        <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
+                                        <td class='right' style='padding-right:10px;'>Rp ". $alternatif['kriteria6']."</td>
+                                        <td style='width:150px;'>". round($alternatif['kriteria7'] / 12, 0)." Tahun, ".$alternatif['kriteria7'] % 12 ." Bulan</td>
                                     </tr>
                                     
                                     ";

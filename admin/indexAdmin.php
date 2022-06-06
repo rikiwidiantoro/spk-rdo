@@ -78,6 +78,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
                     <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
+                    <li><a href="historyDataAdmin.php">history data</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -191,14 +192,14 @@
                                     echo "
                                     <tr>
                                         <td class='center'>". $alternatif['no_alternatif'] ."</td>
-                                        <td style='width:300px;'>". $alternatif['nama_produk'] ."</td>
+                                        <td style='width:250px;'>". $alternatif['nama_produk'] ."</td>
                                         <td style='width:250px;'>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
                                         <td class='center'>+". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
-                                        <td class='right'>Rp ". $alternatif['kriteria6']."</td>
-                                        <td class='center'>". round($alternatif['kriteria7'] / 12, 2) ." Tahun</td>
+                                        <td style='padding-right:10px;' class='right'>Rp ". $alternatif['kriteria6']."</td>
+                                        <td style='width:140px;'>". round($alternatif['kriteria7'] / 12, 0)." Tahun, ".$alternatif['kriteria7'] % 12 ." Bulan</td>
                                         <td class='center'>
                                             <a href='../crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
                                             <a href='../crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>

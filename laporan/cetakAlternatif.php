@@ -18,19 +18,21 @@
     
     $pdf->SetFont('Arial','I',10);
     $pdf->Cell(60,7,'Tanggal update data : '.$tglUpdate,0,1);
+    $pdf->SetFont('Arial','',10);
+    $pdf->Cell(60,7,'Keterangan Total AUM : T = Trillion = Triliun',0,1);
     // $pdf->Cell(60,7,'Tanggal download : '.$tglDownload,0,1);
-    $pdf->Cell(60,7,'',0,1);; 
+    $pdf->Cell(60,7,'',0,1); 
 
     $pdf->SetFont('Arial','B',9);
     $pdf->Cell(17,10,'Alternatif',1,0,'C');
-    $pdf->Cell(75,10,'Nama Produk',1,0,'C');
+    $pdf->Cell(73,10,'Nama Produk',1,0,'C');
     $pdf->Cell(57,10,'Manajer Investasi',1,0,'C');
     $pdf->Cell(20,10,'Total AUM',1,0,'C');
     $pdf->Cell(15,10,'CAGR',1,0,'C');
     $pdf->Cell(20,10,'Drawdown',1,0,'C');
     $pdf->Cell(25,10,'Expense Ratio',1,0,'C');
     $pdf->Cell(30,10,'Minimal Pembelian',1,0,'C');
-    $pdf->Cell(28,10,'Lama Peluncuran',1,1,'C');
+    $pdf->Cell(30,10,'Lama Peluncuran',1,1,'C');
 
 
 
@@ -40,17 +42,18 @@
     while($data = mysqli_fetch_array($rangking)) {
         
         $pdf->Cell(17,10,$data['no_alternatif'],1,0,'C');
-        $pdf->Cell(75,10,$data['nama_produk'],1,0);
+        $pdf->Cell(73,10,$data['nama_produk'],1,0);
         $pdf->Cell(57,10,$data['kriteria1'],1,0);
-        $pdf->Cell(20,10,$data['kriteria2'],1,0,'C');
-        $pdf->Cell(15,10,$data['kriteria3'],1,0,'C');
-        $pdf->Cell(20,10,$data['kriteria4'],1,0,'C');
-        $pdf->Cell(25,10,$data['kriteria5'],1,0,'C');
-        $pdf->Cell(30,10,$data['kriteria6'],1,0,'C');
-        $pdf->Cell(28,10,$data['kriteria7'],1,1,'C');
+        $pdf->Cell(20,10,$data['kriteria2']." T",1,0,'C');
+        $pdf->Cell(15,10,$data['kriteria3']."%",1,0,'C');
+        $pdf->Cell(20,10,$data['kriteria4']."%",1,0,'C');
+        $pdf->Cell(25,10,$data['kriteria5']."%",1,0,'C');
+        $pdf->Cell(30,10,"Rp ".$data['kriteria6'],1,0,'R');
+        $pdf->Cell(30,10,round($data['kriteria7']/12,0)." Tahun, ". $data['kriteria7'] % 12 ." Bulan",1,1,'C');
         // $pdf->Cell(20,10,$i+=1,1,1,'C');
     }
-    $pdf->SetTitle('Daftar Rangking');
-    $pdf->Output('I','daftar rangking.pdf');
+
+    $pdf->SetTitle('Daftar Data Alternatif');
+    $pdf->Output('I','Data Alternatif Mei 2022.pdf');
 
 ?>

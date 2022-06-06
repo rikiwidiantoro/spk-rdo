@@ -40,6 +40,6 @@
         $pdf->Cell(20,10,$i+=1,1,1,'C');
     }
     $pdf->SetTitle('Daftar Rangking');
-    $pdf->Output('I','daftar rangking.pdf');
+    $pdf->Output('I','Daftar Rangking Mei 2022.pdf');
 
 ?>
