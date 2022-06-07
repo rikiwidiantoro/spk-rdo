@@ -34,10 +34,10 @@
     $pdf->SetFont('Arial','',10);
     while($data = mysqli_fetch_array($rangking)) {
         
-        $pdf->Cell(20,10,$data['no_alternatif'],1,0,'C');
-        $pdf->Cell(90,10,$data['nama_produk'],1,0);
-        $pdf->Cell(30,10,$data['nilai_preferensi'],1,0,'C');
-        $pdf->Cell(20,10,$i+=1,1,1,'C');
+        $pdf->Cell(20,9,$data['no_alternatif'],1,0,'C');
+        $pdf->Cell(90,9,$data['nama_produk'],1,0);
+        $pdf->Cell(30,9,$data['nilai_preferensi'],1,0,'C');
+        $pdf->Cell(20,9,$i+=1,1,1,'C');
     }
     $pdf->SetTitle('Daftar Rangking');
     $pdf->Output('I','Daftar Rangking Mei 2022.pdf');

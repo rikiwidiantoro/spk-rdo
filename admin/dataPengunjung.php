@@ -1,3 +1,13 @@
+<?php
+    // koneksi
+    include_once('../koneksi.php');
+
+    $dataUsers = mysqli_query($koneksi, "SELECT * FROM login");
+
+    // menghilangkan pesan error
+    error_reporting(0);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +20,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>History Data</title>
+    <title>Data History</title>
 
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
@@ -35,7 +45,8 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
                     <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
-                    <li><a href="historyDataAdmin.php">history data</a></li>
+                    <li><a href="dataHistoryAdmin.php">data history</a></li>
+                    <li><a href="dataPengunjung.php">data pengunjung</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -54,7 +65,7 @@
                     //     echo $nama['nama'];
                     // }
                 ?>!</h3> -->
-                <h4>History Data</h4>
+                <h4>Data Pengunjung</h4>
                 <hr>
             </div>
         </div>
@@ -63,70 +74,40 @@
     <!-- welcome -->
 
 
-    <!-- data history -->
-    <div class="data-history">
+    <!-- data pengunjung -->
+    <div class="data-pengunjung">
         <div class="container">
             <div class="row">
-                <div class="col s4">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Mei 2022</h5>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Juni 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col s4">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Juli 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div> -->
+                <div class="col s6">
+                    <table>
+                        <thead>
+                            <th class="center">No</th>
+                            <th>Nama</th>
+                            <th>Username</th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($dataUsers as $user) {
+                                    if($user['username'] !== 'admin') {
+                                        $no++;
+                                        echo "
+                                            <tr>
+                                                <td class='center'>". $no ."</td>
+                                                <td>". $user['nama'] ."</td>
+                                                <td>". $user['username'] ."</td>
+                                            </tr>
+                                        ";
+                                    }
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            
         </div>
     </div>
     <br><br><br>
-    <!-- data history -->
+    <!-- data pengunjung -->
 
 
 

@@ -78,7 +78,8 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
                     <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
-                    <li><a href="historyDataAdmin.php">history data</a></li>
+                    <li><a href="dataHistoryAdmin.php">data history</a></li>
+                    <li><a href="dataPengunjung.php">data pengunjung</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
