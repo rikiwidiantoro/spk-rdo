@@ -17,7 +17,7 @@
     $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY no_alternatif ASC");
 
     // query untuk greeting atau ucapan selamat datang di dasboard
-    $ucapan = mysqli_query($koneksi, "SELECT * FROM login WHERE username != 'admin'");
+    // $ucapan = mysqli_query($koneksi, "SELECT * FROM login WHERE username != 'admin'");
     // foreach($ucapan as $nama) {
     //     var_dump($nama['nama']);
     // }
@@ -71,6 +71,9 @@
             padding: 10px 85px;
             text-align: center;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -83,6 +86,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
                     <li><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
+                    <li><a href="dataHistoryUser.php">data history</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -180,7 +184,7 @@
                                         <td>". $alternatif['nama_produk'] ."</td>
                                         <td>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
-                                        <td class='center'>+". $alternatif['kriteria3']."%</td>
+                                        <td class='center'>". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td class='right' style='padding-right:10px;'>Rp ". $alternatif['kriteria6']."</td>

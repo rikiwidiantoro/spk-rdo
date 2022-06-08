@@ -11,24 +11,24 @@
     // session
 
     include_once('../koneksi.php');
-    $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
-    $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
-    $converts = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+    // $kriterias = mysqli_query($koneksi, "SELECT * FROM kriteria");
+    // $alternatifs = mysqli_query($koneksi, "SELECT * FROM alternatif");
+    // $converts = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
-    $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
-    $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+    // $convertss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
+    // $convertsss = mysqli_query($koneksi, "SELECT * FROM convert_alternatif");
 
     // $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
     
 
     // untuk pengkondisian tambah, update t.convert & t.rangking
-    $r = mysqli_query($koneksi, "SELECT * FROM rangking");
-    $w = mysqli_num_rows($alternatifs);
-    $ww = mysqli_num_rows($converts);
-    $www = mysqli_num_rows($r);
-    global $w;
-    global $ww;
-    global $www;
+    // $r = mysqli_query($koneksi, "SELECT * FROM rangking");
+    // $w = mysqli_num_rows($alternatifs);
+    // $ww = mysqli_num_rows($converts);
+    // $www = mysqli_num_rows($r);
+    // global $w;
+    // global $ww;
+    // global $www;
 
 
     $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
@@ -36,15 +36,15 @@
     // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
     // $noa = mysqli_fetch_array($noo);
 
-    // $bobot = mysqli_query($koneksi, "SELECT bobot_kriteria FROM kriteria");
-    // $bb = mysqli_fetch_array($bobot);
-    $bobot = [20,20,15,10,10,10,15];
-    $bobots = mysqli_query($koneksi, "SELECT bobot_kriteria");
+    
+    // $bobot = [20,20,15,10,10,10,15];
+    // $bobots = mysqli_query($koneksi, "SELECT bobot_kriteria");
+    // echo $bobots;
 
-    $nMax = mysqli_query($koneksi, "SELECT max(kriteria1) as maxK1, max(kriteria2) as maxK2, max(kriteria3) as maxK3, max(kriteria7) as maxK7 FROM convert_alternatif");
-    $nMin = mysqli_query($koneksi, "SELECT min(kriteria4) as minK4, min(kriteria5) as minK5, min(kriteria6) as minK6 FROM convert_alternatif");
-    $max = mysqli_fetch_array($nMax);
-    $min = mysqli_fetch_array($nMin);
+    // $nMax = mysqli_query($koneksi, "SELECT max(kriteria1) as maxK1, max(kriteria2) as maxK2, max(kriteria3) as maxK3, max(kriteria7) as maxK7 FROM convert_alternatif");
+    // $nMin = mysqli_query($koneksi, "SELECT min(kriteria4) as minK4, min(kriteria5) as minK5, min(kriteria6) as minK6 FROM convert_alternatif");
+    // $max = mysqli_fetch_array($nMax);
+    // $min = mysqli_fetch_array($nMin);
 
     // menghilangkan pesan error
     error_reporting(0);
@@ -63,6 +63,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hasil Perangkingan</title>
 
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
@@ -79,6 +80,9 @@
             padding: 10px 85px;
             text-align: center;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -91,6 +95,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
                     <li><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
+                    <li><a href="dataHistoryUser.php">data history</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </div>
