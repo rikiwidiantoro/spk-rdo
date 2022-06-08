@@ -36,10 +36,33 @@
     // $noo = mysqli_query($koneksi, "SELECT no_alternatif as no_al_rank FROM rangking");
     // $noa = mysqli_fetch_array($noo);
 
-    // $bobot = mysqli_query($koneksi, "SELECT bobot_kriteria FROM kriteria");
-    // $bb = mysqli_fetch_array($bobot);
-    $bobot = [20,20,15,10,10,10,15];
-    $bobots = mysqli_query($koneksi, "SELECT bobot_kriteria");
+    $bobots = mysqli_query($koneksi, "SELECT bobot_kriteria FROM kriteria");
+    // $bb = mysqli_fetch_array($bobots);
+    // var_dump($bb[1]);
+    // echo $bobots;
+    // var_dump($bb[5]);
+
+
+    $bobot = array();
+    foreach($bobots as $bo) {
+        // var_dump($bo['bobot_kriteria']);
+        // $bbot = $bo['bobot_kriteria'];
+        // echo $bbot . '<br>';
+
+        array_push($bobot, $bo['bobot_kriteria']);
+        
+    }
+    // echo $bobot[0] . '<br>';
+    // echo $bobot[1] . '<br>';
+    // echo $bobot[2] . '<br>';
+    // echo $bobot[3] . '<br>';
+    // echo $bobot[4] . '<br>';
+    // echo $bobot[5] . '<br>';
+    // echo $bobot[6] . '<br>';
+
+
+    
+    // $bobot = [20,20,15,10,10,10,15]; // bobot sebelumnya
 
     $nMax = mysqli_query($koneksi, "SELECT max(kriteria1) as maxK1, max(kriteria2) as maxK2, max(kriteria3) as maxK3, max(kriteria7) as maxK7 FROM convert_alternatif");
     $nMin = mysqli_query($koneksi, "SELECT min(kriteria4) as minK4, min(kriteria5) as minK5, min(kriteria6) as minK6 FROM convert_alternatif");
@@ -80,6 +103,9 @@
         .footer-copyright {
             padding: 10px 85px;
             text-align: center;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>

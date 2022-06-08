@@ -33,6 +33,9 @@
             padding: 10px 85px;
             text-align: center;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 

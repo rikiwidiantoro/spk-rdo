@@ -66,6 +66,9 @@
             padding: 10px 85px;
             text-align: center;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -196,7 +199,7 @@
                                         <td style='width:250px;'>". $alternatif['nama_produk'] ."</td>
                                         <td style='width:250px;'>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
-                                        <td class='center'>+". $alternatif['kriteria3']."%</td>
+                                        <td class='center'>". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
                                         <td style='padding-right:10px;' class='right'>Rp ". $alternatif['kriteria6']."</td>

@@ -23,6 +23,9 @@
             padding: 10px 85px;
             text-align: center;
         }
+        footer a:hover, .data-history a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -68,7 +71,7 @@
     <div class="data-history">
         <div class="container">
             <div class="row">
-                <div class="col s4">
+                <div class="col s3">
                     <div class="row">
                         <div class="col">
                             <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
@@ -82,11 +85,11 @@
                     </div>
                     <div class="row mei">
                         <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
+                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Rangking Mei 2022</a>
                         </div>
                     </div>
                 </div>
-                <div class="col s4">
+                <div class="col s3">
                     <div class="row">
                         <div class="col">
                             <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
@@ -104,11 +107,29 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col s4">
+                <div class="col s3">
                     <div class="row">
                         <div class="col">
                             <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
                             <h5>Data Juli 2022</h5>
+                        </div>
+                    </div>
+                    <!-- <div class="row mei">
+                        <div class="col">
+                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
+                        </div>
+                    </div>
+                    <div class="row mei">
+                        <div class="col">
+                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col s3">
+                    <div class="row">
+                        <div class="col">
+                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
+                            <h5>Data Agustus 2022</h5>
                         </div>
                     </div>
                     <!-- <div class="row mei">
