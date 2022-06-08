@@ -20,7 +20,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Data History</title>
+    <title>Data Pengunjung</title>
 
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
@@ -81,7 +81,7 @@
     <div class="data-pengunjung">
         <div class="container">
             <div class="row">
-                <div class="col s6">
+                <div class="col s7">
                     <table>
                         <thead>
                             <th class="center">No</th>
