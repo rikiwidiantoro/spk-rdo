@@ -24,6 +24,10 @@
     // var_dump($namaUser);
     // nama();
     // echo $namaUser;
+    $user = $_SESSION['login'];
+    // $tampilNamas = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$user");
+    // $tampilNama = mysqli_fetch_array($tampilNamas);
+    // var_dump($user);
     
 ?>
 
@@ -99,7 +103,7 @@
     <br>
     <div class="row container ucapanSelamat">
         <div class="col">
-            <h4>Selamat Datang, <span>User</span>!</h3>
+            <h4>Selamat Datang, <span><?= $user ?></span>!</h3>
             <hr>
         </div>
     </div>

@@ -1,25 +1,32 @@
 <?php
+    
     // session
     session_start();
-
     if( isset($_SESSION['login']) ) {
-        $result = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username'");
-        if( mysqli_num_rows($result) === 1 ) {
-            // cek password
-            $row = mysqli_fetch_assoc($result);
+        // $result = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username'");
+        // if( mysqli_num_rows($result) === 1 ) {
+        //     // cek password
+        //     $row = mysqli_fetch_assoc($result);
 
-            if( $row['username'] === 'admin' ) {
-                $_SESSION['login'] = true;
-                header('Location: admin/indexAdmin.php');
-                exit;
-            } else {
-                $_SESSION['login'] = true;
-                header('Location: user/index.php');
-                exit;
-            }
-        }
+        //     if( $row['username'] === 'admin' ) {
+        //         $_SESSION['login'] = true;
+        //         header('Location: admin/indexAdmin.php');
+        //         exit;
+        //     } else {
+        //         $_SESSION['login'] = true;
+        //         header('Location: user/index.php');
+        //         exit;
+        //     }
+        // }
+        // header('Location: admin/indexAdmin.php');
+        // header('Location: user/index.php');
+        header('Location: logout.php');
     }
     // session
+    // belum bisa me redirect jika sudah login ke halaman user atau admin, -> jadi dibuat jika tab ditutup harus login lagi. => problemnya tidak bisa mengenali session tersebut admin atau user, -> jadi belum bisa menggunakan fitur ini.
+    // akan tetapi session tetap aktif -> jadi jika memaksa masuk lewat url maka tidak bisa, harus login terlebih dahulu.
+
+
 
     include_once('koneksi.php');
 
@@ -37,11 +44,13 @@
             if( password_verify($password, $row['password']) ) {
                 if( $row['username'] == 'admin' ) {
                     $_SESSION['login'] = true;
+                    // $_SESSION['login'] = $row['nama'];
                     header('Location: admin/indexAdmin.php');
                     exit;
                 } 
                 else {
-                    $_SESSION['login'] = true;
+                    // $_SESSION['login'] = true;
+                    $_SESSION['login'] = $row['nama'];
                     header('Location: user/index.php');
                     exit;
                 }
@@ -91,7 +100,7 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Masuk Admin</title>
+        <title>Masuk</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
         <style>
             /* .container {
