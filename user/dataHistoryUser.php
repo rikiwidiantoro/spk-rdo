@@ -51,7 +51,6 @@
 
 
     <!-- welcome -->
-    <br>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -149,7 +148,7 @@
             
         </div>
     </div>
-    <br><br><br><br>
+    <br><br><br><br><br>
     <!-- data history -->
 
 

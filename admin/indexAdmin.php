@@ -92,7 +92,6 @@
 
 
     <!-- welcome -->
-    <br>
     <div class="row container">
         <div class="col">
             <h4>Selamat Datang, <?php 
@@ -107,7 +106,6 @@
 
 
     <!-- tabel kriteria -->
-    <br>
     <div id="kriteria" class="kriteria">
         <div class="container">
             <div class="row">

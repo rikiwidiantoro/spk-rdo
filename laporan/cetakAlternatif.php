@@ -37,7 +37,6 @@
 
 
     $rangking = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY no_alternatif ASC");
-    $i=0;
     $pdf->SetFont('Arial','',9);
     while($data = mysqli_fetch_array($rangking)) {
         
@@ -50,7 +49,6 @@
         $pdf->Cell(25,9,$data['kriteria5']."%",1,0,'C');
         $pdf->Cell(30,9,"Rp ".$data['kriteria6'],1,0,'R');
         $pdf->Cell(30,9,round($data['kriteria7']/12,0)." Tahun, ". $data['kriteria7'] % 12 ." Bulan",1,1,'C');
-        // $pdf->Cell(20,10,$i+=1,1,1,'C');
     }
 
     $pdf->SetTitle('Daftar Data Alternatif');

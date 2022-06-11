@@ -100,7 +100,6 @@
 
 
     <!-- welcome -->
-    <br>
     <div class="row container ucapanSelamat">
         <div class="col">
             <h4>Selamat Datang, <span><?= $user ?></span>!</h3>
@@ -111,7 +110,6 @@
 
 
     <!-- tabel kriteria -->
-    <br>
     <div id="kriteria" class="kriteria">
         <div class="container">
             <div class="row">

@@ -4,8 +4,6 @@
 
     $dataUsers = mysqli_query($koneksi, "SELECT * FROM login");
 
-    // menghilangkan pesan error
-    error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +23,10 @@
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
+        .pesan-update {
+            font-style: italic;
+            font-size: 13px;
+        }
         footer {
             margin-top: 20px;
             padding: 20px 100px;
@@ -59,7 +61,6 @@
 
 
     <!-- welcome -->
-    <br>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -73,7 +74,6 @@
             </div>
         </div>
     </div>
-    
     <!-- welcome -->
 
 
@@ -90,12 +90,12 @@
                         </thead>
                         <tbody>
                             <?php
+                                $no = 1;
                                 foreach($dataUsers as $user) {
                                     if($user['username'] !== 'admin') {
-                                        $no++;
                                         echo "
                                             <tr>
-                                                <td class='center'>". $no ."</td>
+                                                <td class='center'>". $no++ ."</td>
                                                 <td>". $user['nama'] ."</td>
                                                 <td>". $user['username'] ."</td>
                                             </tr>
@@ -107,9 +107,10 @@
                     </table>
                 </div>
             </div>
+            <span class="pesan-update">*Data user atau pengunjung yang pernah melakukan pendaftaran di website.</span>
         </div>
     </div>
-    <br><br><br>
+    <br>
     <!-- data pengunjung -->
 
 

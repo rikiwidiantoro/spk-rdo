@@ -46,9 +46,6 @@
     // $max = mysqli_fetch_array($nMax);
     // $min = mysqli_fetch_array($nMin);
 
-    // menghilangkan pesan error
-    // error_reporting(0);
-
 ?>
 
 <!DOCTYPE html>
