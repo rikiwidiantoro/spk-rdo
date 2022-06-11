@@ -47,7 +47,7 @@
     // $min = mysqli_fetch_array($nMin);
 
     // menghilangkan pesan error
-    error_reporting(0);
+    // error_reporting(0);
 
 ?>
 
@@ -137,15 +137,15 @@
                         <tbody>
                             <?php
                                 // $raking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC && ORDER BY nilai_preferensi LIMIT 5");
+                                $j = 1;
                                 foreach($raking as $rank) {
-                                    $j++;
                                     echo "
                                         <tr>
                                             <td><b>". $rank['no_alternatif'] ."</b></td>
                                             <td>". $rank['nama_produk'] ."</td>
                                             <td>". $rank['kriteria1'] ."</td>
                                             <td>". $rank['nilai_preferensi'] ."</td>
-                                            <td>". $j ."</td>
+                                            <td>". $j++ ."</td>
                                         </tr>
                                     ";
                                 }
@@ -201,11 +201,12 @@
                         <tbody>
                             <?php
                                 // $rangking = mysqli_query($koneksi, "SELECT * FROM rangking ORDER BY nilai_preferensi DESC");
+                                $i = 1;
                                 foreach($rangking as $rank) {
                                     // for($i=1; $i<5;$i++) {
                                     //     global $i;
                                     // }
-                                    $i++;
+                                    // $i++;
 
                                     echo "
                                         <tr>
@@ -213,7 +214,7 @@
                                             <td>". $rank['nama_produk'] ."</td>
                                             <td>". $rank['kriteria1'] ."</td>
                                             <td>". $rank['nilai_preferensi'] ."</td>
-                                            <td>". $i ."</td>
+                                            <td>". $i++ ."</td>
                                         </tr>
                                     ";
                                     

@@ -62,6 +62,7 @@
             echo "
                 <script>
                     alert('Akun Anda berhasil didaftarkan!');
+                    document.location.href = 'index.php';
                 </script>
             ";
         } else {
@@ -119,19 +120,19 @@
                     <table>
                         <tr>
                             <td>Nama Lengkap</td>
-                            <td><input type="text" name="nama" autocomplete="off"></td>
+                            <td><input type="text" name="nama" autocomplete="off" required></td>
                         </tr>
                         <tr>
                             <td>Username</td>
-                            <td><input type="text" name="username" autocomplete="off"></td>
+                            <td><input type="text" name="username" autocomplete="off" required></td>
                         </tr>
                         <tr>
                             <td>Password</td>
-                            <td><input type="password" name="password" autocomplete="off"></td>
+                            <td><input type="password" name="password" autocomplete="off" required></td>
                         </tr>
                         <tr>
                             <td>Konfirmasi Password</td>
-                            <td><input type="password" name="konfirmasiPassword" autocomplete="off"></td>
+                            <td><input type="password" name="konfirmasiPassword" autocomplete="off" required></td>
                         </tr>
                     </table>
                     <br>
