@@ -195,11 +195,11 @@
                                             $x3 = 5;
                                         } else if( $alternatif['kriteria3'] >= 6.01 && $alternatif['kriteria3'] <= 8 ) {
                                             $x3 = 4;
-                                        } else if( $alternatif['kriteria3'] >= 5.01 && $alternatif['kriteria3'] <= 6 ) {
+                                        } else if( $alternatif['kriteria3'] >= 4.01 && $alternatif['kriteria3'] <= 6 ) {
                                             $x3 = 3;
-                                        } else if( $alternatif['kriteria3'] >= 3 && $alternatif['kriteria3'] <= 5 ) {
+                                        } else if( $alternatif['kriteria3'] >= 2 && $alternatif['kriteria3'] <= 4 ) {
                                             $x3 = 2;
-                                        } else if( $alternatif['kriteria3'] < 3 ) {
+                                        } else if( $alternatif['kriteria3'] < 2 ) {
                                             $x3 = 1;
                                         }
                 
@@ -353,11 +353,11 @@
                                             $x3 = 5;
                                         } else if( $alternatif['kriteria3'] >= 6.01 && $alternatif['kriteria3'] <= 8 ) {
                                             $x3 = 4;
-                                        } else if( $alternatif['kriteria3'] >= 5.01 && $alternatif['kriteria3'] <= 6 ) {
+                                        } else if( $alternatif['kriteria3'] >= 4.01 && $alternatif['kriteria3'] <= 6 ) {
                                             $x3 = 3;
-                                        } else if( $alternatif['kriteria3'] >= 3 && $alternatif['kriteria3'] <= 5 ) {
+                                        } else if( $alternatif['kriteria3'] >= 2 && $alternatif['kriteria3'] <= 4 ) {
                                             $x3 = 2;
-                                        } else if( $alternatif['kriteria3'] < 3 ) {
+                                        } else if( $alternatif['kriteria3'] < 2 ) {
                                             $x3 = 1;
                                         }
                 
@@ -481,11 +481,11 @@
                                             $x3 = 5;
                                         } else if( $alternatif['kriteria3'] >= 6.01 && $alternatif['kriteria3'] <= 8 ) {
                                             $x3 = 4;
-                                        } else if( $alternatif['kriteria3'] >= 5.01 && $alternatif['kriteria3'] <= 6 ) {
+                                        } else if( $alternatif['kriteria3'] >= 4.01 && $alternatif['kriteria3'] <= 6 ) {
                                             $x3 = 3;
-                                        } else if( $alternatif['kriteria3'] >= 3 && $alternatif['kriteria3'] <= 5 ) {
+                                        } else if( $alternatif['kriteria3'] >= 2 && $alternatif['kriteria3'] <= 4 ) {
                                             $x3 = 2;
-                                        } else if( $alternatif['kriteria3'] < 3 ) {
+                                        } else if( $alternatif['kriteria3'] < 2 ) {
                                             $x3 = 1;
                                         }
                 

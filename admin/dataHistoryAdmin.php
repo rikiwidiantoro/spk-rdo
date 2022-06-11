@@ -82,12 +82,12 @@
                     </div>
                     <div class="row mei">
                         <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
+                            <a href="../laporan/dataPDF/2022/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
                         </div>
                     </div>
                     <div class="row mei">
                         <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Rangking Mei 2022</a>
+                            <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Rangking Mei 2022</a>
                         </div>
                     </div>
                 </div>

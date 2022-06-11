@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+
     require_once('../koneksi.php');
 
     $tglUpdate = '20 May 2022';
@@ -20,7 +20,6 @@
     $pdf->Cell(60,7,'Tanggal update data : '.$tglUpdate,0,1);
     $pdf->SetFont('Arial','',10);
     $pdf->Cell(60,7,'Keterangan Total AUM : T = Trillion = Triliun',0,1);
-    // $pdf->Cell(60,7,'Tanggal download : '.$tglDownload,0,1);
     $pdf->Cell(60,5,'',0,1); 
 
     $pdf->SetFont('Arial','B',9);

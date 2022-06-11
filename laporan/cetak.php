@@ -17,8 +17,13 @@
     
     
     $pdf->SetFont('Arial','I',10);
+    // untuk history rekap data
+    // $pdf->Cell(60,7,'Tanggal update data : '.$tglUpdate,0,1);
+    // untuk history rekap data
+
     $pdf->Cell(60,7,'Tanggal update data : '.$tglUpdate,0,1);
     $pdf->Cell(60,7,'Tanggal download : '.$tglDownload,0,1);
+
     $pdf->Cell(60,7,'',0,1);; 
 
     $pdf->SetFont('Arial','B',10);
