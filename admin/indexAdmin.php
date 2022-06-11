@@ -36,8 +36,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dasboard</title>
 
-    <!-- css sendiri -->
+    <!-- library fontawesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    
+    <!-- data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    
+    <!-- css sendiri -->
     <style>
         .kriteria .tambah-kriteria {
             margin-top: 20px;
@@ -68,6 +73,10 @@
         }
         footer a:hover {
             text-decoration: underline;
+        }
+        /* data table */
+        .dataTables_filter, .dataTables_length {
+            display: none;
         }
     </style>
 </head>
@@ -118,7 +127,7 @@
             </div>
             <div class="row">
                 <div class="col m12">
-                    <table>
+                    <table id="tabelKriteria" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Kriteria</th>
@@ -172,7 +181,7 @@
             </div>
             <div class="row">
                 <div class="col m12">
-                    <table>
+                    <table id="tabelAlternatif" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Alternatif</th>
@@ -185,7 +194,7 @@
                                         ";
                                     }
                                 ?>
-                                <th style="width: 15%">Aksi</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -194,15 +203,15 @@
                                     echo "
                                     <tr>
                                         <td class='center'>". $alternatif['no_alternatif'] ."</td>
-                                        <td style='width:250px;'>". $alternatif['nama_produk'] ."</td>
-                                        <td style='width:250px;'>". $alternatif['kriteria1'] ."</td>
+                                        <td>". $alternatif['nama_produk'] ."</td>
+                                        <td>". $alternatif['kriteria1'] ."</td>
                                         <td class='center'>". $alternatif['kriteria2']." T</td>
                                         <td class='center'>". $alternatif['kriteria3']."%</td>
                                         <td class='center'>-". $alternatif['kriteria4']."%</td>
                                         <td class='center'>". $alternatif['kriteria5']."%</td>
-                                        <td style='padding-right:10px;' class='right'>Rp ". $alternatif['kriteria6']."</td>
+                                        <td>Rp ". $alternatif['kriteria6']."</td>
                                         <td style='width:140px;'>". round($alternatif['kriteria7'] / 12, 0)." Tahun, ".$alternatif['kriteria7'] % 12 ." Bulan</td>
-                                        <td class='center'>
+                                        <td class='center' style='width:200px;'>
                                             <a href='../crud/editAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>create</i>Edit</a>
                                             <a href='../crud/hapusAlternatif.php?id=".$alternatif['id_alternatif']."' class='waves-effect waves-light btn-small grey darken-1'><i class='material-icons left'>delete</i>Hapus</a>
                                         </td>
@@ -256,7 +265,18 @@
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- library jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- library data table -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tabelAlternatif').DataTable();
+            $('#tabelKriteria').DataTable();
+        });
+    </script>
 
 </body>
 </html>

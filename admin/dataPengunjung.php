@@ -20,8 +20,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Data Pengunjung</title>
 
-    <!-- css sendiri -->
+    <!-- library fontawesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    
+    <!-- data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    
+    <!-- css sendiri -->
     <style>
         .pesan-update {
             font-style: italic;
@@ -37,6 +42,10 @@
         }
         footer a:hover {
             text-decoration: underline;
+        }
+        /* data table */
+        .dataTables_filter, .dataTables_length {
+            display: none;
         }
     </style>
 </head>
@@ -82,7 +91,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s7">
-                    <table>
+                    <table id="tabelPengunjung" class="display" style="width:100%">
                         <thead>
                             <th class="center">No</th>
                             <th>Nama</th>
@@ -150,7 +159,10 @@
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- library jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- library data table -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function() {
             // $('.mei').css('display', 'none');
@@ -158,6 +170,7 @@
             //     $('.mei').fadeToggle(2000);
             // });
             // console.log('ok');
+            $('#tabelPengunjung').DataTable();
         });
     </script>
 
