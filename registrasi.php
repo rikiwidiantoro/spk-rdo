@@ -19,12 +19,13 @@
     function registrasi($data) {
         global $koneksi;
         // Fungsi stripslashes pada php adalah untuk menghapus atau menghilangkan karakter backslashes tanda garis miring terbalik ("\") menggunakan stripslashes() sehingga tidak mengganggu query mysql yang dikirim.
-        $nama = strtolower(stripslashes($data['nama']));
+        $nama = stripslashes($data['nama']);
         $username = strtolower(stripslashes($data['username']));
         // fungsi mysqli_real_escape_string untuk memberi backslash di beberapa kode untuk ditampilkan pada halaman, namun saat menyimpan menuju sql, kode akan tetap normal tanpa ada backslash.
         // atau memungkinkan user memasukkan password ada tanda kutip nya
         $password = mysqli_real_escape_string($koneksi, $data['password']);
         $konfirmasiPassword = mysqli_real_escape_string($koneksi, $data['konfirmasiPassword']);
+        $waktuPendaftaran = stripslashes($data['waktuPendaftaran']);
 
         // cek username sudah ada atau belum
         $dataLogin = mysqli_query($koneksi, "SELECT username FROM login WHERE username = '$username'");
@@ -51,7 +52,7 @@
         $password = password_hash($konfirmasiPassword, PASSWORD_DEFAULT);
 
         // menambahkan user baru ke database
-        mysqli_query($koneksi, "INSERT INTO login VALUES('', '$nama', '$username', '$password')");
+        mysqli_query($koneksi, "INSERT INTO login VALUES('', '$nama', '$username', '$password', '$waktuPendaftaran')");
 
         return mysqli_affected_rows($koneksi);
 
@@ -69,6 +70,10 @@
             mysqli_error($koneksi);
         }
     }
+
+
+    $tambah = strtotime('5 hours');
+    $tglDaftar = Date('h:i a, d M Y', $tambah);
 
 ?>
 
@@ -133,6 +138,10 @@
                         <tr>
                             <td>Konfirmasi Password</td>
                             <td><input type="password" name="konfirmasiPassword" autocomplete="off" required></td>
+                        </tr>
+                        <tr>
+                            <td>Waktu Pendaftaran</td>
+                            <td><input type="text" name="waktuPendaftaran" value="<?php echo $tglDaftar; ?>" readonly=""></td>
                         </tr>
                     </table>
                     <br>

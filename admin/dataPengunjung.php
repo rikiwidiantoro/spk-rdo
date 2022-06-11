@@ -90,12 +90,13 @@
     <div class="data-pengunjung">
         <div class="container">
             <div class="row">
-                <div class="col s7">
+                <div class="col s12">
                     <table id="tabelPengunjung" class="display" style="width:100%">
                         <thead>
                             <th class="center">No</th>
                             <th>Nama</th>
                             <th>Username</th>
+                            <th>Waktu Pendaftaran</th>
                         </thead>
                         <tbody>
                             <?php
@@ -107,6 +108,7 @@
                                                 <td class='center'>". $no++ ."</td>
                                                 <td>". $user['nama'] ."</td>
                                                 <td>". $user['username'] ."</td>
+                                                <td>". $user['waktu_daftar'] ."</td>
                                             </tr>
                                         ";
                                     }
