@@ -30,7 +30,7 @@
     $pdf->Cell(20,10,'Alternatif',1,0,'C');
     $pdf->Cell(90,10,'Nama Produk',1,0,'C');
     $pdf->Cell(30,10,'Nilai Preferensi',1,0,'C');
-    $pdf->Cell(20,10,'Rangking',1,1,'C');
+    $pdf->Cell(20,10,'Ranking',1,1,'C');
 
 
 
@@ -44,7 +44,7 @@
         $pdf->Cell(30,9,$data['nilai_preferensi'],1,0,'C');
         $pdf->Cell(20,9,$i+=1,1,1,'C');
     }
-    $pdf->SetTitle('Daftar Rangking');
-    $pdf->Output('I','Daftar Rangking Mei 2022.pdf');
+    $pdf->SetTitle('Daftar Ranking');
+    $pdf->Output('I','Daftar Ranking Mei 2022.pdf');
 
 ?>
