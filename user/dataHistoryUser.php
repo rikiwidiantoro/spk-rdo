@@ -79,11 +79,11 @@
                             <h5>Data Mei 2022</h5>
                         </div>
                     </div>
-                    <div class="row mei">
+                    <!-- <div class="row mei">
                         <div class="col">
                             <a href="../laporan/dataPDF/2022/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row mei">
                         <div class="col">
                             <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Rangking Mei 2022</a>
@@ -145,7 +145,28 @@
                     </div> -->
                 </div>
             </div>
-            
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h5>2022</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <table>
+                        <thead>
+                            <th>Bulan</th>
+                            <th>Lihat atau Download Data</th>
+                        </thead>
+                        <tbody>
+                            <td>Mei</td>
+                            <td>
+                                <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Rangking Mei 2022</a>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <br><br><br><br><br>
