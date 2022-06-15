@@ -151,6 +151,9 @@
                 <div class="col">
                     <h5>2022</h5>
                 </div>
+                <div class="col">
+                    <a href="../crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Data</a>
+                </div>
             </div>
             <div class="row">
                 <div class="col s12">
@@ -159,6 +162,7 @@
                             <th>Bulan</th>
                             <th>Data Alternatif</th>
                             <th>Data Perangkingan</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                             <td>Mei</td>
@@ -167,6 +171,9 @@
                             </td>
                             <td>
                                 <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Ranking Mei 2022</a>
+                            </td>
+                            <td>
+                                <a href='' class='waves-effect waves-light btn-small grey darken-1 white-text'><i class='material-icons left'>delete</i>Hapus Data</a>
                             </td>
                         </tbody>
                     </table>
