@@ -1,3 +1,21 @@
+<?php
+    // session
+    session_start();
+
+    if( !isset($_SESSION['login']) ) {
+        header("Location: ../index.php");
+        exit;
+    }
+    // session
+
+    // koneksi
+    include_once('../koneksi.php');
+
+    $dataHistoris = mysqli_query($koneksi, "SELECT * FROM data_history");
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +30,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Data History</title>
 
+    <!-- data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
-        .data-history a {
+        .data-history table a, .row1 a {
             color: #26a69a;
         }
         footer {
@@ -26,8 +46,12 @@
             padding: 10px 85px;
             text-align: center;
         }
-        footer a:hover, .data-history a:hover {
+        footer a:hover, .data-history .row1 a:hover, .data-history table a:hover {
             text-decoration: underline;
+        }
+        /* data table */
+        .dataTables_filter, .dataTables_length {
+            display: none;
         }
     </style>
 </head>
@@ -71,7 +95,7 @@
     <!-- data history -->
     <div class="data-history">
         <div class="container">
-            <div class="row">
+            <div class="row row1">
                 <div class="col s3">
                     <div class="row">
                         <div class="col">
@@ -148,21 +172,39 @@
             <hr>
             <div class="row">
                 <div class="col">
-                    <h5>2022</h5>
+                    <h4>Data History</h4>
+                    <hr>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <table>
+                    <table id="tabelDataHistory" class="display" style="width:100%">
                         <thead>
-                            <th>Bulan</th>
-                            <th>Data Perangkingan</th>
+                            <tr>
+                                <th>No</th>
+                                <th>Tahun</th>
+                                <th>Bulan</th>
+                                <th>Data Perangkingan</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <td>Mei</td>
+                            <?php
+                                $nomor = 1;
+                                foreach($dataHistoris as $data) {
+                                    echo "
+                                        <tr>
+                                            <td>".$nomor++."</td>
+                                            <td>".$data['tahun']."</td>
+                                            <td>".$data['bulan']."</td>
+                                            <td><a href='../laporan/data/2022/".$data['data_ranking']."' target='_blank'><i class='material-icons left'>file_download</i> Data Ranking</a></td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                            <!-- <td>Mei</td>
                             <td>
                                 <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Ranking Mei 2022</a>
-                            </td>
+                            </td> -->
                         </tbody>
                     </table>
                 </div>
@@ -210,6 +252,8 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- library data table -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function() {
             // $('.mei').css('display', 'none');
@@ -217,6 +261,7 @@
             //     $('.mei').fadeToggle(2000);
             // });
             // console.log('ok');
+            $('#tabelDataHistory').DataTable();
         });
     </script>
 

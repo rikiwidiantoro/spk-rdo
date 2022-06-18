@@ -21,10 +21,10 @@
 
 
         // mengirim data ke database
-        // $tambahKriteria = mysqli_query($koneksi, "INSERT INTO `alternatif`(`id_alternatif`, `no_alternatif`, `nama_produk`, `kriteria1`, `kriteria2`, `kriteria3`, `kriteria4`, `kriteria5`, `kriteria6`, `kriteria7`) VALUES('', '$noAlternatif', '$namaProduk', '$kriteria1', '$kriteria2', '$kriteria3', '$kriteria4', '$kriteria5', '$kriteria6', '$kriteria7');");
+        $tambahHistory = mysqli_query($koneksi, "INSERT INTO `data_history`(`id_history`, `tahun`, `bulan`, `data_alternatif`, `data_ranking`) VALUES('', '$tahun', '$bulan', '$dataAlternatif', '$dataRanking');");
 
         // alert dan re direct
-        // echo "<script>alert('Data Alternatif berhasil ditambahkan!'); document.location.href = '../admin/indexAdmin.php';</script>";
+        echo "<script>alert('Data History berhasil ditambahkan!'); document.location.href = '../admin/dataHistoryAdmin.php';</script>";
     }
 
     function uploadAlternatif() {
@@ -71,7 +71,54 @@
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensiFile;
         
-        move_uploaded_file($tmpName, '../laporan/dataPDF/2022/' . $namaFileBaru);
+        move_uploaded_file($tmpName, '../laporan/data/2022/' . $namaFileBaru);
+        return $namaFileBaru;
+    }
+    function uploadRanking() {
+        $namaFile = $_FILES['dataRanking']['name'];
+        $ukuranFile = $_FILES['dataRanking']['size'];
+        $error = $_FILES['dataRanking']['error'];
+        $tmpName = $_FILES['dataRanking']['tmp_name'];
+
+        // cek apakah tidak ada file yang diupload
+        if( $error === 4 ) {
+            echo "
+                    <script>
+                        alert('pilih file terlebih dahulu!');
+                    </script>
+                ";
+            return false;
+        }
+
+        // cek yang diupload apakah file atau bukan
+        $ekstensiFileValid = ['pdf'];
+        $ekstensiFile = explode('.', $namaFile);
+        $ekstensiFile = strtolower(end($ekstensiFile));
+
+        if( !in_array($ekstensiFile, $ekstensiFileValid) ) {
+            echo "
+                    <script>
+                        alert('yang Anda upload bukan file pdf!');
+                    </script>
+                ";
+        }
+
+        // cek jika ukuran file-nya terlalu besar
+        if( $ukuranFile > 100000 ) { // maks 100kb
+            echo "
+                    <script>
+                        alert('ukuran file terlalu besar!');
+                    </script>
+                ";
+        }
+
+        // lolos pengecekan, file siap diupload
+        // generate nama file baru
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= '.';
+        $namaFileBaru .= $ekstensiFile;
+        
+        move_uploaded_file($tmpName, '../laporan/data/2022/' . $namaFileBaru);
         return $namaFileBaru;
     }
 
