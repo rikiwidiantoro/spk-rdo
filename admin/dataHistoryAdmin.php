@@ -15,8 +15,11 @@
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
-        .data-history a {
+        .data-history table a, .row1 a {
             color: #26a69a;
+        }
+        .tambah-history {
+            margin-top: 45px;
         }
         footer {
             margin-top: 20px;
@@ -72,7 +75,7 @@
     <!-- data history -->
     <div class="data-history">
         <div class="container">
-            <div class="row">
+            <div class="row row1">
                 <div class="col s3">
                     <div class="row">
                         <div class="col">
@@ -146,34 +149,33 @@
                     </div> -->
                 </div>
             </div>
-            <hr>
+            <hr><br>
             <div class="row">
                 <div class="col">
-                    <h5>2022</h5>
+                    <h4>Data History</h4>
+                    <hr>
                 </div>
-                <div class="col">
-                    <a href="../crud/tambahAlternatif.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-alternatif"><i class="material-icons left">add</i>Tambah Data</a>
+                <div class="col m3 offset-m6">
+                    <a href="../crud/tambahDataHistory.php" class="waves-effect right waves-light btn-small grey darken-1 tambah-history text-white"><i class="material-icons left">add</i>Tambah Data</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
                     <table>
                         <thead>
+                            <th>Tahun</th>
                             <th>Bulan</th>
                             <th>Data Alternatif</th>
                             <th>Data Perangkingan</th>
-                            <th>Aksi</th>
                         </thead>
                         <tbody>
+                            <td>2022</td>
                             <td>Mei</td>
                             <td>
                                 <a href="../laporan/dataPDF/2022/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
                             </td>
                             <td>
                                 <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Ranking Mei 2022</a>
-                            </td>
-                            <td>
-                                <a href='' class='waves-effect waves-light btn-small grey darken-1 white-text'><i class='material-icons left'>delete</i>Hapus Data</a>
                             </td>
                         </tbody>
                     </table>
