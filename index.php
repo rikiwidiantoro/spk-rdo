@@ -143,70 +143,11 @@
             <nav class="grey lighten-4">
                 <div class="nav-wrapper container">
                     <a href="#" class="brand-logo black-text">SPK Reksa Dana Obligasi</a>
-                    <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="indexAdmin.php">dasboard</a></li>
-                        <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
-                        <li><a href="dataHistoryAdmin.php">data history</a></li>
-                        <li><a href="dataPengunjung.php">data pengunjung</a></li>
-                        <li><a href="../logout.php">Logout</a></li>
-                    </ul> -->
                 </div>
             </nav>
         </div>
         <!-- navbar -->
-        <!-- <div class="container grey lighten-2"> -->
-            <!-- <div class="row">
-                <div class="col m8 offset-m2">
-                    <h3 class="center">SPK Reksa Dana Obligasi</h3>
-                    <form action="" method="post">
-                        <div class="row">
-                            <div class="col s2 offset-s1">
-                                <h5 for="username">Username : </h5>
-                            </div>
-                            <div class="col s8">
-                                <input id="text" type="text" name="username">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s2 offset-s1">
-                                <h5 for="password">Password : </h5>
-                            </div>
-                            <div class="col s8">
-                                <input id="password" type="password" name="password">
-                            </div>
-                        </div>
-                        <div class="row center">
-                            <div class="col s12">
-                                <button class="btn grey darken-2 waves-effect waves-light" type="submit" name="login">login
-                                    <i class="material-icons right">send</i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="col m12 s12 center">
-                    <p>Belum punya Akun? Klik <a href="registrasi.php">Daftar</a></p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col m3 offset-m2">
-                    <p>username : admin</p>
-                    <p>username : rikiwidiantoro</p>
-                </div>
-                <div class="col m3 offset-m2">
-                    <p>password : admin1234</p>
-                    <p>password : rikiwidiantoro</p>
-                </div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="col m10 offset-m1">
-                    <a href="index.php" class="btn grey darken-2 waves-effect waves-light btn-small"><i class="material-icons left">keyboard_backspace</i>Kembali</a>
-                </div>
-            </div> -->
-        <!-- </div> -->
+
 
         <div class="container isi">
             <div class="row">
@@ -252,12 +193,12 @@
         <hr>
         <footer class="grey lighten-4 black-text">
             <div class="row">
-                <div class="col s7 offset-s1">
+                <div class="col l7 offset-l1 m7 s12">
                     <h6>Riki Widiantoro | Teknik Informatika</h6>
                     <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
                     <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->
                 </div>
-                <div class="col s2 offset-s1">
+                <div class="col l2 offset-l1 m5 s12">
                     <h6>Kontak Developer :</h6>
                     <div class="sosmed">
                         <p>
