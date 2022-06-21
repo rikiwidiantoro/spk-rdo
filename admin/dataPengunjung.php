@@ -73,11 +73,6 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <!-- <h4>Selamat Datang, <?php 
-                    // foreach($ucapan as $nama) {
-                    //     echo $nama['nama'];
-                    // }
-                ?>!</h3> -->
                 <h4>Data Pengunjung</h4>
                 <hr>
             </div>

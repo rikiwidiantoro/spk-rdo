@@ -100,8 +100,21 @@
     </div>
     <!-- navbar -->
 
+
+    <!-- welcome -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Hasil Perangkingan</h4>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <!-- welcome -->
+
+
     <!-- tombol lihat hasil -->
-    <br><br><br><br>
+    <br>
     <div class="hasil">
         <div class="container">
             <div class="row">
@@ -160,7 +173,7 @@
 
 
     <!-- tombol lihat hasil -->
-    <br><br><br><br>
+    <br><br>
     <div class="lihat-hasil">
         <div class="container">
             <div class="row">

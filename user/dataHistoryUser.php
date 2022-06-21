@@ -35,7 +35,7 @@
     <!-- css sendiri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <style>
-        .data-history table a, .row1 a {
+        .data-history table a {
             color: #26a69a;
         }
         footer {
@@ -78,11 +78,6 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <!-- <h4>Selamat Datang, <?php 
-                    // foreach($ucapan as $nama) {
-                    //     echo $nama['nama'];
-                    // }
-                ?>!</h3> -->
                 <h4>Data History</h4>
                 <hr>
             </div>
@@ -95,87 +90,7 @@
     <!-- data history -->
     <div class="data-history">
         <div class="container">
-            <div class="row row1">
-                <div class="col s3">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Mei 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/2022/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div> -->
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/2022/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Ranking Mei 2022</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s3">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Juni 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col s3">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Juli 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col s3">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a class="waves-effect right waves-light btn-small grey darken-1 data-mei" target="_blank"><i class="material-icons left">keyboard_arrow_down</i>Data Mei 2022</a> -->
-                            <h5>Data Agustus 2022</h5>
-                        </div>
-                    </div>
-                    <!-- <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Data Alternatif Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Alternatif Mei 2022</a>
-                        </div>
-                    </div>
-                    <div class="row mei">
-                        <div class="col">
-                            <a href="../laporan/dataPDF/Daftar Rangking Mei 2022.pdf" target="_blank"><i class="material-icons left">file_download</i>Data Daftar Rangking Mei 2022</a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col">
-                    <h4>Data History</h4>
-                    <hr>
-                </div>
-            </div>
+            <br>
             <div class="row">
                 <div class="col s12">
                     <table id="tabelDataHistory" class="display" style="width:100%">
