@@ -103,12 +103,6 @@
         <title>Masuk</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
         <style>
-            /* .container {
-                margin-top: 80px;
-                padding-bottom: 10px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 5px black;
-            } */
             h5 {
                 font-size: 30px;
                 margin-top: 40px;

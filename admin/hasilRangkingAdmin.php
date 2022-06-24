@@ -103,6 +103,10 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .sidenav h6 {
+            margin: 20px auto;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -112,9 +116,10 @@
         <nav class="grey darken-2">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
-                    <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
+                    <li class="active"><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
                     <li><a href="dataHistoryAdmin.php">data history</a></li>
                     <li><a href="dataPengunjung.php">data pengunjung</a></li>
                     <li><a href="../logout.php">Logout</a></li>
@@ -123,6 +128,18 @@
         </nav>
     </div>
     <!-- navbar -->
+
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li><h6 class="center">SPK Reksa Dana Obligasi</h6></li>
+        <li><a href="indexAdmin.php">Dasboard</a></li>
+        <li class="active"><a href="hasilRangkingAdmin.php">Hasil Perangkingan</a></li>
+        <li><a href="dataHistoryAdmin.php">Data History</a></li>
+        <li><a href="dataPengunjung.php">Data Pengunjung</a></li>
+        <li><a href="../logout.php">Logout</a></li>
+    </ul>
+    <!-- sidenav -->
 
 
     <!-- welcome -->
@@ -733,6 +750,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            // sidenav
+            const sidenav = document.querySelectorAll('.sidenav');
+            // inisialisasi
+            M.Sidenav.init(sidenav);
+
+
             // display none = awalan kosong lali di klik menampilkan hasil perhitungan
             $('.tabel-perhitungan .matriksX').css('display', 'none');
             $('.tabel-perhitungan .rij').css('display', 'none');

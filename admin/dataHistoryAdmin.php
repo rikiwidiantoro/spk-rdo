@@ -56,6 +56,10 @@
         .dataTables_filter, .dataTables_length {
             display: none;
         }
+        .sidenav h6 {
+            margin: 20px auto;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -65,10 +69,11 @@
         <nav class="grey darken-2">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="indexAdmin.php">dasboard</a></li>
                     <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
-                    <li><a href="dataHistoryAdmin.php">data history</a></li>
+                    <li class="active"><a href="dataHistoryAdmin.php">data history</a></li>
                     <li><a href="dataPengunjung.php">data pengunjung</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
@@ -76,6 +81,18 @@
         </nav>
     </div>
     <!-- navbar -->
+
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li><h6 class="center">SPK Reksa Dana Obligasi</h6></li>
+        <li><a href="indexAdmin.php">Dasboard</a></li>
+        <li><a href="hasilRangkingAdmin.php">Hasil Perangkingan</a></li>
+        <li class="active"><a href="dataHistoryAdmin.php">Data History</a></li>
+        <li><a href="dataPengunjung.php">Data Pengunjung</a></li>
+        <li><a href="../logout.php">Logout</a></li>
+    </ul>
+    <!-- sidenav -->
 
 
     <!-- welcome -->
@@ -192,6 +209,11 @@
             // });
             // console.log('ok');
             $('#tabelDataHistory').DataTable();
+
+            // sidenav
+            const sidenav = document.querySelectorAll('.sidenav');
+            // inisialisasi
+            M.Sidenav.init(sidenav);
         });
     </script>
 

@@ -78,6 +78,10 @@
         .dataTables_filter, .dataTables_length {
             display: none;
         }
+        .sidenav h6 {
+            margin: 20px auto;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -87,8 +91,9 @@
         <nav class="grey darken-2">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="indexAdmin.php">dasboard</a></li>
+                    <li class="active"><a href="indexAdmin.php">dasboard</a></li>
                     <li><a href="hasilRangkingAdmin.php">hasil perangkingan</a></li>
                     <li><a href="dataHistoryAdmin.php">data history</a></li>
                     <li><a href="dataPengunjung.php">data pengunjung</a></li>
@@ -98,6 +103,18 @@
         </nav>
     </div>
     <!-- navbar -->
+
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li><h6 class="center">SPK Reksa Dana Obligasi</h6></li>
+        <li class="active"><a href="indexAdmin.php">Dasboard</a></li>
+        <li><a href="hasilRangkingAdmin.php">Hasil Perangkingan</a></li>
+        <li><a href="dataHistoryAdmin.php">Data History</a></li>
+        <li><a href="dataPengunjung.php">Data Pengunjung</a></li>
+        <li><a href="../logout.php">Logout</a></li>
+    </ul>
+    <!-- sidenav -->
 
 
     <!-- welcome -->
@@ -233,12 +250,12 @@
     <!-- footer -->
     <footer class="grey darken-2 white-text">
         <div class="row">
-            <div class="col s7 offset-s1">
+            <div class="col m7 s12 offset-m1">
                 <h6>Riki Widiantoro | Teknik Informatika</h6>
                 <p>Website Sistem Pendukung Keputusan Rekomendasi Produk Reksa Dana Obligasi Terbaik dengan Metode Simple Additive Weighting (SAW)</p>
                 <!-- <h6>&copy; 2022 | SKRIPSI</h6> -->
             </div>
-            <div class="col s2 offset-s1">
+            <div class="col m2 s12 offset-m1">
                 <h6>Kontak Developer :</h6>
                 <div class="sosmed">
                     <p>
@@ -275,6 +292,11 @@
         $(document).ready(function() {
             $('#tabelAlternatif').DataTable();
             $('#tabelKriteria').DataTable();
+
+            // sidenav
+            const sidenav = document.querySelectorAll('.sidenav');
+            // inisialisasi
+            M.Sidenav.init(sidenav);
         });
     </script>
 

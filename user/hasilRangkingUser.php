@@ -80,6 +80,10 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .sidenav h6 {
+            margin: 20px auto;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -89,9 +93,10 @@
         <nav class="grey darken-2">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">SPK Reksa Dana Obligasi</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.php">dasboard</a></li>
-                    <li><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
+                    <li class="active"><a href="hasilRangkingUser.php">hasil perangkingan</a></li>
                     <li><a href="dataHistoryUser.php">data history</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
@@ -99,6 +104,17 @@
         </nav>
     </div>
     <!-- navbar -->
+
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li><h6 class="center">SPK Reksa Dana Obligasi</h6></li>
+        <li><a href="index.php">Dasboard</a></li>
+        <li class="active"><a href="hasilRangkingUser.php">Hasil Perangkingan</a></li>
+        <li><a href="dataHistoryUser.php">Data History</a></li>
+        <li><a href="../logout.php">Logout</a></li>
+    </ul>
+    <!-- sidenav -->
 
 
     <!-- welcome -->
@@ -280,6 +296,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            // sidenav
+            const sidenav = document.querySelectorAll('.sidenav');
+            // inisialisasi
+            M.Sidenav.init(sidenav);
+
+
             // display none = awalan kosong lali di klik menampilkan hasil perhitungan
             $('.tabel-perhitungan .matriksX').css('display', 'none');
             $('.tabel-perhitungan .rij').css('display', 'none');
